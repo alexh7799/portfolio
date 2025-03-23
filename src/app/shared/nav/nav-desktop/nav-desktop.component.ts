@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { ScrollbarToSectionService } from '../../services/scrollbar-to-section.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav-desktop',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './nav-desktop.component.html',
   styleUrl: './nav-desktop.component.scss',
 })

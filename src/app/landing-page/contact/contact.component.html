@@ -4,12 +4,12 @@
             <div>
                 <div class="contact-header">
                     <div class="headline">
-                        <h2 class="outline-text">{{ 'Kontakt' | translate }}</h2>
+                        <h2 class="outline-text">{{ 'contact.title' | translate }}</h2>
                     </div>
                 </div>
             </div>
             <div class="work-info-container hide-mobile">
-                <span>Let us work together.</span>
+                <span>{{'Let-work' | translate}}</span>
                 <span>Encourage people to contact you and describe what role you are interested in. Express confidence in your ability to make a meaningful contribution to a team through your expertise and enthusiasm for improving your skills.</span>
                 <div class="email-container" (mouseenter)="contactIcons.email.isHovered = true" (mouseleave)="contactIcons.email.isHovered = false" (mousedown)="contactIcons.email.isActive = true" (mouseup)="contactIcons.email.isActive = false">
                     <img [src]="getContactImage('email')" alt="email">
@@ -48,11 +48,11 @@
                 <span class="phone-span" [class.active-phone]="contactIcons.phone.isActive">Tel: 01575 2102518</span>
             </div>
         </div>
-        <app-arrow class="hide-desktop" [href]="'#'"></app-arrow>
-        <app-arrow class="hide-mobile" [href]="'#'"></app-arrow>
+        <app-arrow class="hide-desktop" [href]="'hero'"></app-arrow>
+        <app-arrow class="hide-mobile" [href]="'hero-mobile'"></app-arrow>
         <div class="hide-desktop">
-            <a href="legal-notice" class="link" [class.active-link]="contactIcons.legalnotice.isActive" (mousedown)="contactIcons.legalnotice.isActive = true" (mouseup)="contactIcons.legalnotice.isActive = false">Legal notice</a>
-            <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive" (mousedown)="contactIcons.policy.isActive = true" (mouseup)="contactIcons.policy.isActive = false">privacy policy</a>
+            <a href="legal-notice" class="link" [class.active-link]="contactIcons.legalnotice.isActive" (mousedown)="contactIcons.legalnotice.isActive = true" (mouseup)="contactIcons.legalnotice.isActive = false">{{ 'Impressum' | translate }}</a>
+            <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive" (mousedown)="contactIcons.policy.isActive = true" (mouseup)="contactIcons.policy.isActive = false">{{ 'Datenschutz' | translate }}</a>
             <p>&copy; Alexander Hörst 2025</p>
         </div>
     </div>

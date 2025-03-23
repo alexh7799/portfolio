@@ -8,10 +8,9 @@
             </div>
         </div>
         <div class="text-icon-container">
-            <span>I am motivated to continuously learn new technologies and develop myself. My ability to solve complex
-                problems and my passion for programming make me a valuable member of your team.</span>
+            <span>{{ 'Warum-desc' | translate }} </span>
             <div class="icons-contactbtn-container">
-                <h3>I am:</h3>
+                <h3>{{ 'Ich bin' | translate }}</h3>
                 <div class="icon-container">
                     <app-icons-name *ngFor="let item of icon; let i = index"
                     [name]="item.name"
@@ -19,7 +18,7 @@
                     (mouseenter)="changeImage(i, true)"
                     (mouseleave)="changeImage(i, false)"></app-icons-name>
                 </div>
-                <app-button [href]="'contact'" [name]="'Contact me'"></app-button>
+                <app-button [href]="'contact'" [name]="'contact me'"></app-button>
             </div>
         </div>
     </div>

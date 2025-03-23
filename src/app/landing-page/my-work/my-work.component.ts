@@ -18,7 +18,7 @@ export class MyWorkComponent {
   projects = [
     { 
       id: 1, 
-      title: 'Project Join', 
+      title: 'Projekt Join', 
       text: [
         { 
           headline: 'About the project', 

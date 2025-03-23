@@ -9,14 +9,11 @@
                 </div>
             </div>
             <div class="text-icon-container">
-                <span>The IT landscape is continuously evolving, with new technologies and methodologies. Staying
-                    motivated to expand my IT skills requires a strategic approach, a curious mindset, and a commitment
-                    to lifelong learning.</span>
+                <span>{{"skill-desc" | translate}}</span>
                 <div class="icons-text-container">
                     <div class="icon-container">
                         <app-icons-skill *ngFor="let icon of icon; last as isLast" [icon]="icon" [isLast]="isLast"></app-icons-skill>
-                        <span class="new-skill">I am always happy to learn new technologies,
-                            just tell me what you need.
+                        <span class="new-skill">{{'skill-lastdesc' | translate}}
                         </span> 
                     </div>
                 </div>

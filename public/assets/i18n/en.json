@@ -2,8 +2,20 @@
 
 {
   "Warum": "Why me",
+  "Warum-desc": "I am motivated to continuously learn new technologies and develop myself. My ability to solve complex problems and my passion for programming make me a valuable member of your team.",
+  "Ich bin": "I am",
   "Projekte": "My Work",
   "Meine Skills": "My Skill Set",
   "Referenzen": "References",
-  "Kontakt": "Contact me"
+  "Kontakt": "Contact",
+  "contact": {
+    "title": "Contact me"
+  },
+  "skill-desc": "The IT landscape is continuously evolving, with new technologies and methodologies. Staying motivated to expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong learning.",
+  "skill-lastdesc": "I am always happy to learn new technologies, just tell me what you need.",
+  "Datenschutz": "privacy policy",
+  "Impressum": "legal notice",
+  "Projekt": "Project",
+  "Let-work": "Let us work together.",
+  "contact-desc": ""
 }

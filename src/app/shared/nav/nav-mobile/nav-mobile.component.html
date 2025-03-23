@@ -14,16 +14,16 @@
     <div class="link-container" [class.show]="isMenuOpen">
         <div class="link-to-sections">
             <div class="link" (click)="onNavigate('why-me-mobile')" [class.active]="activeSection === 'why-me-mobile'">
-                <span>Why me</span>
+                <span>{{ 'Warum' | translate }}</span>
             </div>
             <div class="link" (click)="onNavigate('skills-mobile')" [class.active]="activeSection === 'skills-mobile'">
                 <span>Skills</span>
             </div>
             <div class="link" (click)="onNavigate('my-work-mobile')" [class.active]="activeSection === 'my-work-mobile'">
-                <span>My Work</span>
+                <span>My Work{{ 'Projekte' | translate }}</span>
             </div>
             <div class="link" (click)="onNavigate('contact-mobile')" [class.active]="activeSection === 'contact-mobile'">
-                <span>Contact</span>
+                <span>{{'Kontakt' | translate }}</span>
             </div>
             <div class="lang-container">
                 <span class="pointer" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">EN</span>

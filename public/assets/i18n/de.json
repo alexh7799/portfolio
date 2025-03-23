@@ -1,18 +1,10 @@
 {
-    "WHY_ME": {
-      "TITLE": "Warum",
-      "DESCRIPTION": "Beschreibungstext hier"
-    },
-    "SKILLS": {
-      "TITLE": "Meine Skills"
-    },
-    "My_Work": {
-      "TITLE": "Projekte"
-    },
-    "References": {
-      "TITLE": "Referenzen"
-    },
-    "Contact": {
-      "TITLE": "Kontakt"
-    }
-  }
+  "Warum-desc": "Ich bin motiviert, kontinuierlich neue Technologien zu erlernen und mich weiterzuentwickeln. Meine Fähigkeit, komplexe Probleme zu lösen und meine Leidenschaft für das Programmieren machen mich zu einem wertvollen Mitglied Ihres Teams.",
+  "contact": {
+    "title": "Kontakt"
+  },
+  "skill-desc": "Die IT-Landschaft entwickelt sich ständig weiter und bringt neue Technologien und Methoden mit sich. Um motiviert zu bleiben und meine IT-Kenntnisse zu erweitern, sind ein strategischer Ansatz, Neugier und die Bereitschaft zum lebenslangen Lernen erforderlich.",
+  "skill-lastdesc": "Ich freue mich immer, neue Technologien zu lernen. Sagen Sie mir einfach, was Sie brauchen.",
+  "Let-work": "Lassen Sie uns zusammenarbeiten.",
+  "contact-desc": ""
+}

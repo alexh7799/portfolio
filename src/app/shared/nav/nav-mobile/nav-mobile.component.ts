@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { ScrollbarToSectionService } from '../../services/scrollbar-to-section.service';
 import { Subscription } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-mobile',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './nav-mobile.component.html',
   styleUrl: './nav-mobile.component.scss'
 })

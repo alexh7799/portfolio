@@ -17,9 +17,9 @@
       <app-arrow class="hide-desktop" [href]="'start'"></app-arrow>
       <div class="hide-desktop">
         <a href="legal-notice" class="link" [class.active-link]="legal.isActive" (mousedown)="legal.isActive = true"
-          (mouseup)="legal.isActive = false">Legal notice</a>
+          (mouseup)="legal.isActive = false">{{ 'Impressum' | translate }}</a>
         <a href="policy" class="link" [class.active-link]="policy.isActive" (mousedown)="policy.isActive = true"
-          (mouseup)="policy.isActive = false">privacy policy</a>
+          (mouseup)="policy.isActive = false">{{ 'Datenschutz' | translate }}</a>
         <p>&copy; Alexander Hörst 2025</p>
       </div>
     </div>
