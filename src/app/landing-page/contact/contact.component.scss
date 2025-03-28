@@ -17,7 +17,7 @@
         width: 100%;
 
         input {
-            background-color: transparent;
+            background-color: transparent !important;
             color: $secandColor;
             border-radius: 20px;
             border: 1px solid $primaryColor;
@@ -34,7 +34,7 @@
 
         textarea {
             height: 260px;
-            background-color: transparent;
+            background-color: transparent !important;
             color: $secandColor;
             border-radius: 20px;
             border: 1px solid $primaryColor;
@@ -104,16 +104,6 @@
                 display: block;
             }
         }
-        
-        app-button {
-            align-self: flex-end;
-
-            &.disabled {
-                filter: grayscale(1) brightness(0.6);
-                pointer-events: none;
-                cursor: not-allowed;
-            }
-        }
 
         span {
             color: $primaryColor;
@@ -180,6 +170,39 @@
         align-self: flex-end;
         transform: rotate(-90deg) scale(0.8);
     }
+}
+
+button {
+    background-color: $primaryColor;
+    color: #252525;
+    border: 0;
+    border-radius: 25px;
+    padding: 10px 25px;
+    cursor: pointer;
+    align-self: flex-end;
+
+    &.disabled {
+        filter: grayscale(1) brightness(0.6);
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        box-shadow: inset -12px -10px 20px -8px rgba(#000000, 20%);
+    }
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    transition: background-color 500000s ease-in-out 0s;
+    background-color: #000000 !important;
+    -webkit-text-fill-color: $secandColor !important;
+    box-shadow: 0 0 0px 1000px transparent inset;
+}
+
+input:-internal-autofill-selected {
+    background-color: #000000 !important;
+    -webkit-text-fill-color: $secandColor !important;
 }
 
 @media only screen and (min-width: 720px) and (min-height: 570px) {

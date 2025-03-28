@@ -9,7 +9,18 @@
   "Referenzen": "References",
   "Kontakt": "Contact",
   "contact": {
-    "title": "Contact me"
+    "title": "Contact me",
+    "button": "Send",
+    "placeholder": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "Your message",
+      "error": {
+        "name": "Please enter your name",
+        "email": "Please enter your email",
+        "message": "Please enter your message"
+      }
+    }
   },
   "skill-desc": "The IT landscape is continuously evolving, with new technologies and methodologies. Staying motivated to expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong learning.",
   "skill-lastdesc": "I am always happy to learn new technologies, just tell me what you need.",

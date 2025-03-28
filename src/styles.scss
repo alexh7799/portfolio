@@ -114,6 +114,34 @@ app-nav-desktop {
   font-weight: bold;
 }
 
+::-webkit-scrollbar {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; // Dunklere Farbe für die Spur
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primaryColor;
+  border-radius: 5px;
+  border: 3px solid #000000; // Border-Farbe gleich wie track
+  background-clip: padding-box;
+
+  &:hover {
+    background: darken($primaryColor, 5%);
+    border: 2px solid #000000;
+  }
+}
+
+// Firefox Styles
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $primaryColor #000000; // Thumb-Farbe Track-Farbe
+}
+
 @media only screen and (min-width: 720px) and (min-height: 570px) {
   app-root {
     flex-direction: row;

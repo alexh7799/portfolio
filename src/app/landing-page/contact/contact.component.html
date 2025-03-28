@@ -20,24 +20,25 @@
                     <span class="phone-span" [class.active-phone]="contactIcons.phone.isActive">Tel: 01575 2102518</span>
                 </div>
             </div>
-            <div class="contact-input-container">
-                <input type="text" name="input-name" id="input-name" placeholder="Your name" [(ngModel)]="formData.name" [class.warning-input]="formErrors.name" [placeholder]="formErrors.name ? 'Please enter your name' : 'Your name'">
-                <input type="email" name="input-email" id="input-email" placeholder="Your e-mail" [(ngModel)]="formData.email" [class.warning-input]="formErrors.email" [placeholder]="formErrors.email ? 'Please enter your email' : 'Your email'">
-                <textarea name="message" id="message" placeholder="Your message" [(ngModel)]="formData.message" [class.warning-input]="formErrors.message"[placeholder]="formErrors.message ? 'Please enter your message' : 'Your message'"></textarea>
+            <form class="contact-input-container" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <input type="text" name="input-name" id="input-name" [(ngModel)]="formData.name" [class.warning-input]="formErrors.name" [placeholder]="formErrors.name ? ('contact.placeholder.error.name' | translate) : ('contact.placeholder.name' | translate)" required>
+                <input type="email" name="input-email" id="input-email" [(ngModel)]="formData.email" [class.warning-input]="formErrors.email" [placeholder]="formErrors.email ? ('contact.placeholder.error.email' | translate) : ('contact.placeholder.email' | translate)" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                <textarea name="message" id="message" [(ngModel)]="formData.message" [class.warning-input]="formErrors.message"[placeholder]="formErrors.message ? ('contact.placeholder.error.message' | translate) : ('contact.placeholder.message' | translate)" required></textarea>
                 <div class="policy-container">
-                    <img class="checkbox" [src]="getCheckboxImage()" (click)="toggleCheckbox()" (mouseenter)="checkboxState.isHovered = true" (mouseleave)="checkboxState.isHovered = false" alt="checkbox">
+                    <img class="checkbox" [src]="getCheckboxImage()" (click)="toggleCheckbox()" (mouseenter)="checkboxState.isHovered = true" (mouseleave)="checkboxState.isHovered = false" alt="checkbox" required>
                     <span>I've read the <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive" (mousedown)="contactIcons.policy.isActive = true" (mouseup)="contactIcons.policy.isActive = false">privacy policy</a> and agree to the processing of my data as outlined.</span>
                 </div>
                 <span class="policy-error" [class.warning-text]="formErrors.policy">
                     Please accept the privacy policy.
                 </span>
-                <app-button [class.disabled]="!checkboxState.isChecked" [name]="'Send'" (click)="validateForm()"></app-button>
-            </div>
+                <!-- <app-button  [name]="'Send'" (click)="validateForm()"></app-button> -->
+                <button [class.disabled]="!checkboxState.isChecked" type="submit" value="Submit">{{ 'contact.button' | translate }}</button>
+            </form>
         </div>
     </div>
     <div class="arrow-text-container">
         <div class="hide-desktop">
-            <span>Let us work together.</span>
+            <span>{{'Let-work' | translate}}</span>
             <span>Encourage people to contact you and describe what role you are interested in. Express confidence in your ability to make a meaningful contribution to a team through your expertise and enthusiasm for improving your skills.</span>
             <div class="email-container" (mouseenter)="contactIcons.email.isHovered = true" (mouseleave)="contactIcons.email.isHovered = false" (mousedown)="contactIcons.email.isActive = true" (mouseup)="contactIcons.email.isActive = false">
                 <img [src]="getContactImage('email')" alt="email">
