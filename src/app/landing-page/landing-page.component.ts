@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, Input } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { SocialMediaComponent } from "./social-media/social-media.component";
 import { MyWorkComponent } from './my-work/my-work.component';
 import { WhyMeComponent } from "./why-me/why-me.component";
