@@ -2,7 +2,7 @@
     <div class="social-container">
         <img src="assets/img/{{ icon[0].image }}"
         (mouseenter)="changeImage(0, true)"
-        (mouseleave)="changeImage(0, false)"/>
+        (mouseleave)="changeImage(0, false)" (click)="onEmailClick()"/>
         <img src="assets/img/{{ icon[1].image }}"
         (mouseenter)="changeImage(1, true)"
         (mouseleave)="changeImage(1, false)"(click)="openExternalLink('https://www.linkedin.com/in/alexander-hoerst/')"/>

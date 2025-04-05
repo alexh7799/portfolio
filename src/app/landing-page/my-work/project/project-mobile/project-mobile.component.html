@@ -2,7 +2,7 @@
     <div class="project-container">
         <div class="project-header-container">
             <h3 class="number-project">{{item.id}}</h3>
-            <h3 translate="no">{{item.title}}</h3>
+            <h3>{{item.title | translate}}</h3>
         </div>
         <div class="content-container">
             <div>
@@ -10,18 +10,18 @@
                     <li>
                         <div>
                             <span class="headline-text">{{item.text[0].headline}}</span>
-                            <span>{{item.text[0].text}}</span></div>
+                            <span>{{item.text[0].text | translate}}</span></div>
                     </li>
                     <li [class.show-less]="isShowMore == false">
                         <div>
                             <span class="headline-text">{{item.text[1].headline}}</span>
-                            <span>{{item.text[1].text}}</span>
+                            <span>{{item.text[1].text | translate}}</span>
                         </div>
                     </li>
                     <li [class.show-less]="isShowMore == false">
                         <div>
                             <span class="headline-text">{{item.text[2].headline}}</span>
-                            <span>{{item.text[2].text}}</span>
+                            <span>{{item.text[2].text | translate}}</span>
                         </div>
                     </li>
                 </ul>
@@ -29,8 +29,8 @@
             <div class="img-btn-container" [class.show-less]="isShowMore == false">
                 <img src="assets/img/{{item.img}}" alt="">
                 <div class="button-container">
-                    <app-outerline-button [href]="item.github" [name]="'GitHub'"></app-outerline-button>
-                    <app-button [href]="item.livelink" [name]="'Live Test'"></app-button>
+                    <app-outerline-button [href]="item.github" [isExternalLink]="true" [name]="'GitHub'"></app-outerline-button>
+                    <app-button [href]="item.livelink" [isExternalLink]="true" [name]="'Live Test'"></app-button>
                 </div>
             </div>
         </div>

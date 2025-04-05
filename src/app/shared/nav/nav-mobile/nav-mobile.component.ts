@@ -29,16 +29,16 @@ export class NavMobileComponent {
     this.translate.use(lang);
     this.currentLang = lang;
   }
-  
-    onNavigate(sectionId: string) {
-      this.activeSection = sectionId;
-      if (this.activeSection === 'hero-mobile') {
-        this.router.navigate(['/']); // Navigation zur Startseite
-      }
-      this.scrollbarToSectionService.scrollToSection(sectionId);
-    }
 
-    theRespMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
+  onNavigate(sectionId: string) {
+    this.activeSection = sectionId;
+    if (this.activeSection === 'hero-mobile') {
+      this.router.navigate(['/']); // Navigation zur Startseite
     }
+    this.scrollbarToSectionService.scrollToSection(sectionId);
+  }
+
+  theRespMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

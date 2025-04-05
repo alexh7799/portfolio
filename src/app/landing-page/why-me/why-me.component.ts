@@ -13,19 +13,20 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './why-me.component.scss'
 })
 export class WhyMeComponent {
+  btnText: string = 'why.button';
   icon = [
     { 
-      name: 'located in Hörstel', 
+      name: 'why.icons.location', 
       image: 'located-default.svg',
       hoverImage: 'located-hover.svg'
     },
     { 
-      name: 'open to work remote', 
+      name: 'why.icons.remote', 
       image: 'remote-default.svg',
       hoverImage: 'remote-hover.svg'
     },
     { 
-      name: 'open to relocate', 
+      name: 'why.icons.relocate', 
       image: 'relocate-default.svg',
       hoverImage: 'relocate-hover.svg'
     }

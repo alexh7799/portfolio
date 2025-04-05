@@ -54,7 +54,14 @@
     }
 }
 
-@media only screen and (min-width: 720px) and (min-height: 570px) {
+@media screen and (min-width: 470px) {
+    .container {
+        padding: 60px 60px;
+    }
+    
+}
+
+@media only screen and (min-width: 720px) and (min-height: 810px) {
     .container {
         display: flex;
         align-items: flex-start;

@@ -4,11 +4,11 @@
             <div>
                 <div class="references-header">
                     <div class="headline hide-desktop">
-                        <h2 class="outline-text">{{ 'Referenzen' | translate }}</h2>
+                        <h2 class="outline-text">{{ 'references.title' | translate }}</h2>
                     </div>
                     <div class="hide-mobile headline">
-                        <h2>Need a teamplayer?</h2>
-                        <span>Here what my colleagues said about me</span>
+                        <h2>{{ 'references.mobiletitle' | translate }}</h2>
+                        <span>{{ 'references.desc' | translate }}</span>
                     </div>
                 </div>
             </div>
@@ -16,12 +16,12 @@
                     <div class="references-item"
                         *ngFor="let reference of references; let i = index">
                         <div class="references-item-description">
-                            <span>{{reference.description}}</span>
+                            <span>{{reference.description | translate}}</span>
                         </div>
                         <div class="line"></div>
                         <div class="references-item-header">
-                            <h3>{{reference.name}}</h3>
-                            <span>{{reference.project}}</span>
+                            <h3>{{reference.name | translate}}</h3>
+                            <span>{{reference.project | translate}}</span>
                         </div>
                     </div>
                 
@@ -31,12 +31,12 @@
                     <div class="references-item"
                         *ngFor="let reference of references; let i = index">
                         <div class="references-item-description">
-                            <span>{{reference.description}}</span>
+                            <span>{{reference.description | translate}}</span>
                         </div>
                         <div class="line"></div>
                         <div class="references-item-header">
-                            <h3>{{reference.name}}</h3>
-                            <span>{{reference.project}}</span>
+                            <h3>{{reference.name | translate}}</h3>
+                            <span>{{reference.project | translate}}</span>
                         </div>
                     </div>
                 </div>

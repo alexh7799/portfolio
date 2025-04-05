@@ -37,7 +37,9 @@
         top: 0;
         left: 5px;
         right: 5px;
-        display: none;
+        transform: translateY(-120%);
+        transition: transform 500ms ease-in-out;
+        display: block;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
@@ -45,7 +47,7 @@
         border-bottom-left-radius: 25px;
 
         &.show {
-            display: block;
+            transform: translateY(0%);
         }
 
         .link-to-sections {

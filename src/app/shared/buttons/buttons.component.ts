@@ -11,11 +11,15 @@ import { ScrollbarToSectionService } from '../services/scrollbar-to-section.serv
 export class ButtonsComponent {
   @Input() name = '';
   @Input() href = '';
+  @Input() isExternalLink = false;
 
   constructor(private scrollbarToSectionService: ScrollbarToSectionService) { }
     
-
   onNavigate() {
-    this.scrollbarToSectionService.scrollToSection(this.href);
+    if (this.isExternalLink) {
+      window.location.href = this.href;
+    } else {
+      this.scrollbarToSectionService.scrollToSection(this.href);
+    }
   }
 }

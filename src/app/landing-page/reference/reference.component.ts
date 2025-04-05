@@ -1,8 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { ArrowComponent } from '../../shared/arrow/arrow.component';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { ViewportRuler } from '@angular/cdk/scrolling';
+import { inject } from '@angular/core';
 
 @Component({
   selector: 'app-reference',
@@ -17,9 +18,9 @@ export class ReferenceComponent {
   @ViewChild('referenceContainer') referenceContainer!: ElementRef;
   
   references = [
-    {project: 'angular', name: 'Angular', description: '"Angular is a platform and framework for building single-page client applications using HTML and TypeScript."'},
-    {project: 'angular', name: 'Angular', description: '"Angular is a platform and framework for building single-page client applications using HTML and TypeScript."'},
-    {project: 'angular', name: 'Angular', description: '"Angular is a platform and framework for building single-page client applications using HTML and TypeScript."'}
+    {project: 'references.references.1.project', name: 'references.references.1.name', description: 'references.references.1.desc'},
+    {project: 'references.references.2.project', name: 'references.references.2.name', description: 'references.references.2.desc'},
+    {project: 'references.references.3.project', name: 'references.references.3.name', description: 'references.references.3.desc'}
   ]
 
   ngAfterViewInit() {
@@ -30,11 +31,36 @@ export class ReferenceComponent {
     });
   }
 
+  private viewportRuler = inject(ViewportRuler);
+  private screenWidth: number = 0;
+
+  constructor() {
+    this.screenWidth = this.viewportRuler.getViewportSize().width;
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.screenWidth = this.viewportRuler.getViewportSize().width;
+    this.updateActiveButton();
+  }
+
+  private getItemWidth(): number {
+    return this.screenWidth >= 470 ? 350 : 280;
+  }
+
+  ngOnInit() {
+    // ViewportRuler subscription für live updates
+    this.viewportRuler.change().subscribe(() => {
+      this.screenWidth = this.viewportRuler.getViewportSize().width;
+      this.updateActiveButton();
+    });
+  }
+
   private updateActiveButton() {
     if (!this.referenceContainer) return;
     const container = this.referenceContainer.nativeElement;
     const scrollPosition = container.scrollLeft;
-    const itemWidth = 280;
+    const itemWidth = this.getItemWidth();
     this.activeSection = Math.round(scrollPosition / itemWidth);
   }
 
@@ -44,9 +70,12 @@ export class ReferenceComponent {
     const container = this.referenceContainer.nativeElement;
     const items = container.getElementsByClassName('references-item');
     if (items[index]) {
-      const scrollPosition = items[index].offsetLeft - container.offsetLeft;
+      const itemWidth = this.getItemWidth();
+      const scrollPosition = index * itemWidth;
       container.scrollTo({ left: scrollPosition, behavior: 'smooth'});
     }
   }
+
+
 }
 

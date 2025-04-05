@@ -14,15 +14,15 @@ import { ProjectMobileComponent } from './project/project-mobile/project-mobile.
   styleUrl: './my-work.component.scss'
 })
 export class MyWorkComponent {
-  btnText: string = "Let's talk";
+  btnText: string = "project.button";
   projects = [
     { 
       id: 1, 
-      title: 'Projekt Join', 
+      title: 'project.project1.title', 
       text: [
         { 
           headline: 'About the project', 
-          text: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.' 
+          text: 'project.project1.about-project' 
         }, 
         { 
           headline: 'Technologies I have used', 
@@ -30,54 +30,54 @@ export class MyWorkComponent {
         }, 
         { 
           headline: 'What I have  learned', 
-          text: 'Maybe you used a certain technology for the first time? Have you learnt more about how to keep your code clean or how to organise the components in your projects?' 
+          text: 'project.project1.learning' 
         }
       ], 
       img: 'join-screenshot.svg',
-      github: '', 
-      livelink: '' 
+      github: 'https://github.com/alexh7799/join_group_project', 
+      livelink: 'https://join.Alexander-Hörst.de/' 
     },
     { 
       id: 2, 
-      title: 'Project Pokedex', 
+      title: 'project.project2.title', 
       text: [
         { 
           headline: 'About the project', 
-          text: '' 
+          text: 'project.project2.about-project' 
         }, 
         { 
           headline: 'Technologies I have used', 
-          text: '' 
+          text: 'JavaScript, HTML, CSS, Rest API' 
         }, 
         { 
           headline: 'What I have  learned', 
-          text: '' 
+          text: 'project.project2.learning' 
         }
       ], 
       img: 'pokedex.svg',
-      github: '', 
-      livelink: '' 
+      github: 'https://github.com/alexh7799/pokedex', 
+      livelink: 'https://pokedex.Alexander-Hörst.de/' 
     },
     { 
       id: 3, 
-      title: 'Project Dark Magic', 
+      title: 'project.project3.title', 
       text: [
         { 
           headline: 'About the project', 
-          text: '' 
+          text: 'project.project3.about-project' 
         }, 
         { 
           headline: 'Technologies I have used', 
-          text: '' 
+          text: 'JavaScript, HTML, CSS' 
         }, 
         { 
           headline: 'What I have  learned', 
-          text: '' 
+          text: 'project.project3.learning' 
         }
       ], 
       img: 'dark-magic.svg',
-      github: '', 
-      livelink: '' 
+      github: 'https://github.com/alexh7799/Dark-Magic', 
+      livelink: 'https://join.Alexander-Hörst.de/' 
     }
   ]
 }

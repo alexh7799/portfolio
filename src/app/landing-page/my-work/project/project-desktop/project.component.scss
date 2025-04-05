@@ -5,7 +5,6 @@
     padding: 20px 30px;
     border-radius: 20px;
     width: 700px;
-    height: 450px;
 
     .project-header-container {
         color: $primaryColor;
@@ -91,8 +90,4 @@
     span {
         color: $secandColor;
     }
-}
-
-@media only screen and (min-width: 720px) and (min-height: 570px) {
-
 }

@@ -9,51 +9,94 @@
                 </div>
             </div>
             <div class="work-info-container hide-mobile">
-                <span>{{'Let-work' | translate}}</span>
-                <span>Encourage people to contact you and describe what role you are interested in. Express confidence in your ability to make a meaningful contribution to a team through your expertise and enthusiasm for improving your skills.</span>
-                <div class="email-container" (mouseenter)="contactIcons.email.isHovered = true" (mouseleave)="contactIcons.email.isHovered = false" (mousedown)="contactIcons.email.isActive = true" (mouseup)="contactIcons.email.isActive = false">
+                <span>{{'contact.subtitle' | translate}}</span>
+                <span>{{'contact.motivation' | translate}}</span>
+                <div class="email-container" (mouseenter)="contactIcons.email.isHovered = true"
+                    (mouseleave)="contactIcons.email.isHovered = false" (mousedown)="contactIcons.email.isActive = true"
+                    (mouseup)="contactIcons.email.isActive = false">
                     <img [src]="getContactImage('email')" alt="email">
-                    <span class="email-span" [class.active-email]="contactIcons.email.isActive">E-mail: hoerst.alexander&#64;gmail.com</span>
+                    <span class="email-span" [class.active-email]="contactIcons.email.isActive" (click)="onEmailClick()">E-mail:
+                        hoerst.alexander&#64;gmail.com</span>
                 </div>
-                <div class="phone-container" (mouseenter)="contactIcons.phone.isHovered = true" (mouseleave)="contactIcons.phone.isHovered = false" (mousedown)="contactIcons.phone.isActive = true" (mouseup)="contactIcons.phone.isActive = false">
+                <div class="phone-container" (mouseenter)="contactIcons.phone.isHovered = true"
+                    (mouseleave)="contactIcons.phone.isHovered = false" (mousedown)="contactIcons.phone.isActive = true"
+                    (mouseup)="contactIcons.phone.isActive = false">
                     <img [src]="getContactImage('phone')" alt="phone">
-                    <span class="phone-span" [class.active-phone]="contactIcons.phone.isActive">Tel: 01575 2102518</span>
+                    <span class="phone-span" [class.active-phone]="contactIcons.phone.isActive" (click)="onPhoneClick()">Tel: 01575
+                        2102518</span>
                 </div>
             </div>
             <form class="contact-input-container" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-                <input type="text" name="input-name" id="input-name" [(ngModel)]="formData.name" [class.warning-input]="formErrors.name" [placeholder]="formErrors.name ? ('contact.placeholder.error.name' | translate) : ('contact.placeholder.name' | translate)" required>
-                <input type="email" name="input-email" id="input-email" [(ngModel)]="formData.email" [class.warning-input]="formErrors.email" [placeholder]="formErrors.email ? ('contact.placeholder.error.email' | translate) : ('contact.placeholder.email' | translate)" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-                <textarea name="message" id="message" [(ngModel)]="formData.message" [class.warning-input]="formErrors.message"[placeholder]="formErrors.message ? ('contact.placeholder.error.message' | translate) : ('contact.placeholder.message' | translate)" required></textarea>
+                <div class="input-wrapper">
+                    <input type="text" name="input-name" id="input-name" [(ngModel)]="formData.name"
+                        [class.warning-input]="formErrors.name"
+                        (ngModelChange)="validateOnChange('name')"
+                        [placeholder]="formErrors.name ? ('contact.placeholder.error.name' | translate) : ('contact.placeholder.name' | translate)"
+                        required>
+                    <img *ngIf="shouldShowIcon('name')" [src]="getValidationIcon('name')" class="validation-icon"
+                        alt="validation">
+                </div>
+                <div class="input-wrapper">
+                    <input type="email" name="input-email" id="input-email" [(ngModel)]="formData.email"
+                        [class.warning-input]="formErrors.email"
+                        (ngModelChange)="validateOnChange('email')"
+                        [placeholder]="formErrors.email ? ('contact.placeholder.error.email' | translate) : ('contact.placeholder.email' | translate)"
+                        required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    <img *ngIf="shouldShowIcon('email')" [src]="getValidationIcon('email')" class="validation-icon"
+                        alt="validation">
+                </div>
+                <div class="input-wrapper">
+                    <textarea name="message" id="message" [(ngModel)]="formData.message"
+                        [class.warning-input]="formErrors.message"
+                        (ngModelChange)="validateOnChange('message')"
+                        [placeholder]="formErrors.message ? ('contact.placeholder.error.message' | translate) : ('contact.placeholder.message' | translate)"
+                        required></textarea>
+                    <img *ngIf="shouldShowIcon('message')" [src]="getValidationIcon('message')" class="validation-icon"
+                        alt="validation">
+                </div>
                 <div class="policy-container">
-                    <img class="checkbox" [src]="getCheckboxImage()" (click)="toggleCheckbox()" (mouseenter)="checkboxState.isHovered = true" (mouseleave)="checkboxState.isHovered = false" alt="checkbox" required>
-                    <span>I've read the <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive" (mousedown)="contactIcons.policy.isActive = true" (mouseup)="contactIcons.policy.isActive = false">privacy policy</a> and agree to the processing of my data as outlined.</span>
+                    <img class="checkbox" [src]="getCheckboxImage()" (click)="toggleCheckbox()"
+                        (mouseenter)="checkboxState.isHovered = true" (mouseleave)="checkboxState.isHovered = false"
+                        alt="checkbox" required>
+                    <span>{{'contact.policycheck' | translate}} <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive"
+                            (mousedown)="contactIcons.policy.isActive = true"
+                            (mouseup)="contactIcons.policy.isActive = false">{{'contact.policy' | translate}}</a> {{'contact.policycheck2' | translate}}</span>
                 </div>
                 <span class="policy-error" [class.warning-text]="formErrors.policy">
-                    Please accept the privacy policy.
+                    {{'contact.policyerror' | translate}}
                 </span>
-                <!-- <app-button  [name]="'Send'" (click)="validateForm()"></app-button> -->
-                <button [class.disabled]="!checkboxState.isChecked" type="submit" value="Submit">{{ 'contact.button' | translate }}</button>
+                <button [class.disabled]="!checkboxState.isChecked" type="submit" value="Submit">{{ 'contact.button' |
+                    translate }}</button>
             </form>
         </div>
     </div>
     <div class="arrow-text-container">
         <div class="hide-desktop">
-            <span>{{'Let-work' | translate}}</span>
-            <span>Encourage people to contact you and describe what role you are interested in. Express confidence in your ability to make a meaningful contribution to a team through your expertise and enthusiasm for improving your skills.</span>
-            <div class="email-container" (mouseenter)="contactIcons.email.isHovered = true" (mouseleave)="contactIcons.email.isHovered = false" (mousedown)="contactIcons.email.isActive = true" (mouseup)="contactIcons.email.isActive = false">
+            <span>{{'contact.subtitle' | translate}}</span>
+            <span>{{'contact.motivation' | translate}}</span>
+            <div class="email-container" (mouseenter)="contactIcons.email.isHovered = true"
+                (mouseleave)="contactIcons.email.isHovered = false" (mousedown)="contactIcons.email.isActive = true"
+                (mouseup)="contactIcons.email.isActive = false">
                 <img [src]="getContactImage('email')" alt="email">
-                <span class="email-span" [class.active-email]="contactIcons.email.isActive">E-mail: hoerst.alexander&#64;gmail.com</span>
+                <span class="email-span" [class.active-email]="contactIcons.email.isActive" (click)="onEmailClick()">E-mail:
+                    hoerst.alexander&#64;gmail.com</span>
             </div>
-            <div class="phone-container" (mouseenter)="contactIcons.phone.isHovered = true" (mouseleave)="contactIcons.phone.isHovered = false" (mousedown)="contactIcons.phone.isActive = true" (mouseup)="contactIcons.phone.isActive = false">
+            <div class="phone-container" (mouseenter)="contactIcons.phone.isHovered = true"
+                (mouseleave)="contactIcons.phone.isHovered = false" (mousedown)="contactIcons.phone.isActive = true"
+                (mouseup)="contactIcons.phone.isActive = false">
                 <img [src]="getContactImage('phone')" alt="phone">
-                <span class="phone-span" [class.active-phone]="contactIcons.phone.isActive">Tel: 01575 2102518</span>
+                <span class="phone-span" [class.active-phone]="contactIcons.phone.isActive" (click)="onPhoneClick()">Tel: 01575 2102518</span>
             </div>
         </div>
         <app-arrow class="hide-desktop" [href]="'hero'"></app-arrow>
         <app-arrow class="hide-mobile" [href]="'hero-mobile'"></app-arrow>
         <div class="hide-desktop">
-            <a href="legal-notice" class="link" [class.active-link]="contactIcons.legalnotice.isActive" (mousedown)="contactIcons.legalnotice.isActive = true" (mouseup)="contactIcons.legalnotice.isActive = false">{{ 'Impressum' | translate }}</a>
-            <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive" (mousedown)="contactIcons.policy.isActive = true" (mouseup)="contactIcons.policy.isActive = false">{{ 'Datenschutz' | translate }}</a>
+            <a href="legal-notice" class="link" [class.active-link]="contactIcons.legalnotice.isActive"
+                (mousedown)="contactIcons.legalnotice.isActive = true"
+                (mouseup)="contactIcons.legalnotice.isActive = false">{{ 'footer.legal' | translate }}</a>
+            <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive"
+                (mousedown)="contactIcons.policy.isActive = true" (mouseup)="contactIcons.policy.isActive = false">{{
+                'footer.policy' | translate }}</a>
             <p>&copy; Alexander Hörst 2025</p>
         </div>
     </div>

@@ -3,22 +3,23 @@
         <div>
             <div class="why-me-header">
                 <div class="headline">
-                    <h2 class="outline-text">{{ 'Warum' | translate }}</h2>
+                    <h2 class="outline-text">{{ 'why.title' | translate }}</h2>
                 </div>
             </div>
         </div>
         <div class="text-icon-container">
-            <span>{{ 'Warum-desc' | translate }} </span>
+            <span>{{ 'why.desc' | translate }} </span>
             <div class="icons-contactbtn-container">
-                <h3>{{ 'Ich bin' | translate }}</h3>
+                <h3>{{ 'why.desc2' | translate }}</h3>
                 <div class="icon-container">
                     <app-icons-name *ngFor="let item of icon; let i = index"
-                    [name]="item.name"
+                    [name]="item.name | translate"
                     [image]="item.image"
                     (mouseenter)="changeImage(i, true)"
                     (mouseleave)="changeImage(i, false)"></app-icons-name>
                 </div>
-                <app-button [href]="'contact'" [name]="'contact me'"></app-button>
+                <app-button class="hide-desktop" [href]="'contact'" [name]="btnText | translate"></app-button>
+                <app-button class="hide-mobile" [href]="'contact-mobile'" [name]="btnText | translate"></app-button>
             </div>
         </div>
     </div>

@@ -1,8 +1,80 @@
 {
-  "Warum-desc": "Ich bin motiviert, kontinuierlich neue Technologien zu erlernen und mich weiterzuentwickeln. Meine Fähigkeit, komplexe Probleme zu lösen und meine Leidenschaft für das Programmieren machen mich zu einem wertvollen Mitglied Ihres Teams.",
+  "why": {
+    "title": "Warum",
+    "desc": "Ich bin motiviert, kontinuierlich neue Technologien zu erlernen und mich weiterzuentwickeln. Meine Fähigkeit, komplexe Probleme zu lösen und meine Leidenschaft für das Programmieren machen mich zu einem wertvollen Mitglied Ihres Teams.",
+    "desc2": "Ich bin",
+    "button": "Jetzt kontaktieren",
+    "icons": {
+      "location": "Standort in Hörstel",
+      "remote": "offen für Remotearbeit",
+      "relocate": "offen für ein Umzug"
+    }
+  },
+  "nav": {
+    "contact": "Kontakt",
+    "skills": "Skills",
+    "work": "Projekt",
+    "why": "Warum"
+  },
+  "skill": {
+    "title": "Meine Skills",
+    "desc": "Die IT-Landschaft entwickelt sich ständig weiter und bringt neue Technologien und Methoden mit sich. Um motiviert zu bleiben und meine IT-Kenntnisse zu erweitern, sind ein strategischer Ansatz, Neugier und die Bereitschaft zum lebenslangen Lernen erforderlich.",
+    "lastdesc": "Ich freue mich immer, neue Technologien zu lernen. Sagen Sie mir einfach, was Sie brauchen.",
+    "button": "Jetzt kontaktieren",
+    "skillIcon": "Fordern Sie mich heraus"
+  },
+  "project": {
+    "title": "Projekte",
+    "button": "Jetzt kontaktieren",
+    "ongoing-project": "Aktuelles Projekt",
+    "ongoing-desc": "Ich entwickle derzeit einen innovativen 3D-Online-Shop mit Three.js, der es Kunden ermöglicht, Produkte in einem immersiven 3D-Raum zu erkunden und aus verschiedenen Perspektiven zu betrachten. Bei diesem Projekt wende ich moderne Webtechnologien wie Three.js für 3D-Rendering, WebGL für Grafikoptimierung und eine REST-API für das Backend an, wobei eine sorgfältige Planung der Benutzerinteraktion und Performance-Optimierung im Mittelpunkt steht.",
+    "project1": {
+      "title": "Projekt Join",
+      "about-project": "Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben per Drag & Drop und weisen Sie Benutzer und Kategorien zu.",
+      "learning": "In diesem Projekt habe ich gelernt, wie man Firebase als Backend-as-a-Service für Echtzeit-Datensynchronisation und Benutzerverwaltung implementiert. Die Entwicklung des Kanban-Boards mit Drag & Drop hat mir wertvolle Einblicke in die Gestaltung interaktiver Benutzeroberflächen gegeben."
+    },
+    "project2": {
+      "title": "Projekt Pokedex",
+      "about-project": "Eine interaktive Pokémon-Enzyklopädie, die Daten über eine REST-API abruft und detaillierte Informationen zu jedem Pokémon anzeigt. Die Anwendung bietet eine responsive Benutzeroberfläche mit Such- und Filterfunktionen.",
+      "learning": "Bei diesem Projekt habe ich gelernt, wie man effektiv mit REST-APIs kommuniziert und die erhaltenen Daten dynamisch verarbeitet. Die Implementierung von Suchfunktionen und Filtern hat mein Verständnis für Datenmanipulation und asynchrone Programmierung vertieft."
+    },
+    "project3": {
+      "title": "Projekt Dark Magic",
+      "about-project": "Ein Jump-and-Run-Spiel, das mit JavaScript und HTML5 Canvas entwickelt wurde. Es bietet eine einfache Steuerung und ein ansprechendes Gameplay.",
+      "learning": "In diesem Projekt habe ich die Grundlagen der objektorientierten Programmierung (OOP) mit Klassen und Vererbung kennengelernt. Die Implementierung von Spielelogik und Character-Bewegungen hat mir ein tiefes Verständnis für die Strukturierung von Code mit OOP vermittelt."
+    }
+  },
+  "references": {
+    "title": "Referenzen",
+    "mobiletitle": "brauchen sie eine Teamplayer?",
+    "desc": "Was meine Kollegen über mich gesagt haben",
+    "references": {
+      "1": {
+        "name": "Miriam Müller",
+        "project": "Projekt Join",
+        "desc": "Er ist ein Teamplayer, der immer bereit ist, sein Wissen zu teilen und anderen zu helfen."
+      },
+      "2": {
+        "name": "Max",
+        "project": "Projekt Pokedex",
+        "desc": "Er hat eine bemerkenswerte Fähigkeit, komplexe Probleme zu lösen und innovative Lösungen zu finden."
+      },
+      "3": {
+        "name": "Anna Müller",
+        "project": "Projekt Dark Magic",
+        "desc": "Er hat eine großartige Fähigkeit, technische Konzepte verständlich zu erklären."
+      }
+    }
+  },
   "contact": {
     "title": "Kontakt",
     "button": "Absenden",
+    "subtitle": "Lassen Sie uns zusammenarbeiten.",
+    "policycheck": "Ich habe die",
+    "policycheck2": "gelesen und akzeptiere sie.",
+    "policy": "Datenschutzrichtlinie",
+    "policyerror": "Bitte akzeptieren Sie die Datenschutzrichtlinie.",
+    "motivation": "Als leidenschaftlicher Frontend-Entwickler suche ich nach spannenden Herausforderungen, bei denen ich meine Expertise in der Webentwicklung einbringen kann. Mit meinem technischen Know-how und der Begeisterung für moderne Technologien möchte ich Teil eines innovativen Teams werden, in dem ich nicht nur meine Fähigkeiten einsetzen, sondern auch kontinuierlich weiterentwickeln kann. Ich bin überzeugt, dass meine analytische Denkweise und mein Engagement für Clean Code wertvolle Beiträge zu Ihren Projekten leisten werden.",
     "placeholder": {
       "name": "Dein Name",
       "email": "Deine E-Mail",
@@ -14,8 +86,8 @@
       }
     }
   },
-  "skill-desc": "Die IT-Landschaft entwickelt sich ständig weiter und bringt neue Technologien und Methoden mit sich. Um motiviert zu bleiben und meine IT-Kenntnisse zu erweitern, sind ein strategischer Ansatz, Neugier und die Bereitschaft zum lebenslangen Lernen erforderlich.",
-  "skill-lastdesc": "Ich freue mich immer, neue Technologien zu lernen. Sagen Sie mir einfach, was Sie brauchen.",
-  "Let-work": "Lassen Sie uns zusammenarbeiten.",
-  "contact-desc": ""
+  "footer": {
+    "policy": "Datenschutz",
+    "legal": "Impressum"
+  }
 }

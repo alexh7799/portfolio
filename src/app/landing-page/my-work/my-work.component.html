@@ -3,7 +3,7 @@
         <div>
             <div class="my-work-header">
                 <div class="headline">
-                    <h2 class="outline-text">{{ 'Projekte' | translate }}</h2>
+                    <h2 class="outline-text">{{ 'project.title' | translate }}</h2>
                 </div>
             </div>
         </div>
@@ -14,11 +14,11 @@
         <div class="ongoing-container">
             <div class="ongoing-header">
                 <h3 class="number-project">4</h3>
-                <h3>Ongoing project</h3>
+                <h3>{{ 'project.ongoing-project' | translate }}</h3>
             </div>
             <div class="ongoing-btn-text">
-                <span>Are you currently working on a project? What is it about and what technologies are you using? Emphasise that good planning and execution are essential to the success of your work and to achieving great results.</span>
-                <app-button class="hide-desktop" [href]="'contact'" [name]="btnText"></app-button>
+                <span>{{ 'project.ongoing-desc' | translate }}</span>
+                <app-button class="hide-desktop" [href]="'contact'" [name]="btnText | translate"></app-button>
             </div>
         </div>
     </div>

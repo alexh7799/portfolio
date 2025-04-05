@@ -120,14 +120,14 @@ app-nav-desktop {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000; // Dunklere Farbe für die Spur
+  background: #000000;
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: $primaryColor;
   border-radius: 5px;
-  border: 3px solid #000000; // Border-Farbe gleich wie track
+  border: 3px solid #000000;
   background-clip: padding-box;
 
   &:hover {
@@ -139,10 +139,10 @@ app-nav-desktop {
 // Firefox Styles
 * {
   scrollbar-width: thin;
-  scrollbar-color: $primaryColor #000000; // Thumb-Farbe Track-Farbe
+  scrollbar-color: $primaryColor #000000;
 }
 
-@media only screen and (min-width: 720px) and (min-height: 570px) {
+@media only screen and (min-width: 720px) and (min-height: 810px) {
   app-root {
     flex-direction: row;
   }

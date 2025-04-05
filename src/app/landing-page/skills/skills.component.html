@@ -4,22 +4,22 @@
             <div>
                 <div class="skill-header">
                     <div class="headline">
-                        <h2 class="outline-text">{{ 'Meine Skills' | translate }}</h2>
+                        <h2 class="outline-text">{{ 'skill.title' | translate }}</h2>
                     </div>
                 </div>
             </div>
             <div class="text-icon-container">
-                <span>{{"skill-desc" | translate}}</span>
+                <span>{{"skill.desc" | translate}}</span>
                 <div class="icons-text-container">
                     <div class="icon-container">
                         <app-icons-skill *ngFor="let icon of icon; last as isLast" [icon]="icon" [isLast]="isLast"></app-icons-skill>
-                        <span class="new-skill">{{'skill-lastdesc' | translate}}
+                        <span class="new-skill">{{'skill.lastdesc' | translate}}
                         </span> 
                     </div>
                 </div>
                           
             </div>
-            <app-button class="hide-mobile" [href]="'contact'" [name]="btnText"></app-button>
+            <app-button class="hide-mobile" [href]="'contact-mobile'" [name]="btnText | translate"></app-button>
         </div>
     </div>
     <div class="arrow-container">

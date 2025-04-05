@@ -113,6 +113,30 @@
                 text-decoration: none;
             }
         }
+
+        .input-wrapper {
+            position: relative;
+            width: 100%;
+    
+            input, textarea {
+                width: 100%;
+                padding-right: 40px;
+            }
+    
+            .validation-icon {
+                position: absolute;
+                right: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                pointer-events: none;
+            }
+    
+            textarea ~ .validation-icon {
+                top: 15px;
+                transform: none;
+            }
+        }
     }
 
     .work-info-container {
@@ -205,7 +229,14 @@ input:-internal-autofill-selected {
     -webkit-text-fill-color: $secandColor !important;
 }
 
-@media only screen and (min-width: 720px) and (min-height: 570px) {
+@media screen and (min-width: 470px) {
+    .container {
+        padding: 60px 60px;
+    }
+    
+}
+
+@media only screen and (min-width: 720px) and (min-height: 810px) {
     .container {
         display: flex;
         flex-direction: row !important;
@@ -228,6 +259,14 @@ input:-internal-autofill-selected {
 
         app-button {
             margin-right: 20px;
+        }
+    }
+
+    .contact-input-container {
+        .input-wrapper {
+            .validation-icon {
+                display: none;
+            }
         }
     }
 
@@ -279,7 +318,7 @@ input:-internal-autofill-selected {
             flex-direction: column;
             align-self: flex-end;
             align-items: end;
-            gap: 24px;
+            gap: 20px;
             width: 300px;
 
             >span:first-child {
@@ -298,6 +337,7 @@ input:-internal-autofill-selected {
         app-arrow {
             align-self: flex-end;
             transform: rotate(-180deg);
+            margin: 5px 0;
         }
 
         >div:last-child {
@@ -305,7 +345,7 @@ input:-internal-autofill-selected {
             flex-direction: column;
             align-items: flex-end;
             align-self: flex-end;
-            gap: 30px;
+            gap: 15px;
 
             .link {
                 text-align: end;

@@ -13,7 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  btnText: string = "Let's talk";
+  btnText: string = "skill.button";
   icon = [
     {image: 'angular.svg', name: 'Angular'},
     {image: 'typescript.svg', name: 'TypeScript'},
@@ -25,7 +25,7 @@ export class SkillsComponent {
     {image: 'git.svg', name: 'Git'},
     {image: 'scrum.svg', name: 'Scrum'},
     {image: 'material-design.svg', name: 'Material Design'},
-    {image: 'challenge.svg', name: 'Challenge me'}
+    {image: 'challenge.svg', name: 'skill.skillIcon'}
   ]
 
   constructor() {

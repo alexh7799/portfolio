@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ContactService } from '../../shared/services/contact-service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-social-media',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslateModule, CommonModule],
   templateUrl: './social-media.component.html',
   styleUrl: './social-media.component.scss'
 })
@@ -25,7 +27,7 @@ export class SocialMediaComponent {
     },
   ];
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private contactService: ContactService) {
     translate.setDefaultLang('de');
     this.currentLang = translate.currentLang || 'de';
   }
@@ -42,6 +44,10 @@ export class SocialMediaComponent {
   }
 
   openExternalLink(url: string) {
-    window.open(url, '_blank');
+    window.location.href = url;
+  }
+
+  onEmailClick() {
+    this.contactService.sendEmail();
   }
 }

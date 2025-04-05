@@ -1,16 +1,82 @@
 
 
 {
-  "Warum": "Why me",
-  "Warum-desc": "I am motivated to continuously learn new technologies and develop myself. My ability to solve complex problems and my passion for programming make me a valuable member of your team.",
-  "Ich bin": "I am",
-  "Projekte": "My Work",
-  "Meine Skills": "My Skill Set",
-  "Referenzen": "References",
-  "Kontakt": "Contact",
+  "why": {
+    "title": "Why me",
+    "desc": "I am motivated to continuously learn new technologies and develop myself. My ability to solve complex problems and my passion for programming make me a valuable member of your team.",
+    "desc2": "I am",
+    "button": "contact me",
+    "icons": {
+      "location": "located in Hörstel",
+      "remote": "open to work remote",
+      "relocate": "open to relocate"
+    }
+  },
+  "nav": {
+    "contact": "Contact",
+    "skills": "Skills",
+    "work": "My Work",
+    "why": "Why me"
+  },
+  "skill": {
+    "title": "My Skill Set",
+    "desc": "The IT landscape is continuously evolving, with new technologies and methodologies. Staying motivated to expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong learning.",
+    "lastdesc": "I am always happy to learn new technologies, just tell me what you need.",
+    "button": "Let's talk",
+    "skillIcon": "Challenge me"
+  },
+  "project": {
+    "title": "My Work",
+    "ongoing-project": "Ongoing project",
+    "ongoing-desc": "I am currently developing an innovative 3D online shop using Three.js, allowing customers to explore products in an immersive 3D space and view them from different perspectives. In this project, I am applying modern web technologies such as Three.js for 3D rendering, WebGL for graphics optimization, and a REST API for the backend, with careful planning of user interaction and performance optimization being central to the development.",
+    "button": "Let's talk",
+    "project1": {
+      "title": "Project Join",
+      "about-project": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+      "learning": "In this project, I learned how to implement Firebase as a backend-as-a-service for real-time data synchronisation and user management. The development of the Kanban board with drag & drop gave me valuable insights into the design of interactive user interfaces."
+    },
+    "project2": {
+      "title": "Project Pokedex",
+      "about-project": "An interactive Pokémon encyclopaedia that retrieves data via a REST API and displays detailed information about each Pokémon. The application offers a responsive user interface with search and filter functions.",
+      "learning": "This project taught me how to communicate effectively with REST APIs and process the data received dynamically. The implementation of search functions and filters deepened my understanding of data manipulation and asynchronous programming."
+    },
+    "project3": {
+      "title": "Project Dark Magic",
+      "about-project": "A jump-and-run game developed with JavaScript and HTML5 Canvas. It offers simple controls and appealing gameplay.",
+      "learning": "In this project, I learnt the basics of object-oriented programming (OOP) with classes and inheritance. The implementation of game logic and character movements gave me a deep understanding of structuring code with OOP."
+    }
+  },
+  "references": {
+    "title": "References",
+    "mobiletitle": "Need a teamplayer?",
+    "desc": "Here what my colleagues said about me",
+    "references": {
+      "1": {
+        "name": "Miriam",
+        "project": "Project Join",
+        "desc": "He is a team player who is always willing to share his knowledge and help others."
+      },
+      "2": {
+        "name": "Max",
+        "project": "Project Pokedex",
+        "desc": "He has a remarkable ability to solve complex problems and find innovative solutions."
+      },
+      "3": {
+        "name": "Anna",
+        "project": "Project Dark Magic",
+        "desc": "He has an impressive ability to communicate complex ideas clearly and effectively."
+      }
+    }
+  },
   "contact": {
     "title": "Contact me",
+    "subtitle": "Let us work together.",
     "button": "Send",
+    "policy": "privacy policy",
+    "policycheck": "I've read the",
+    "policycheck2": "and agree to the processing of my data as outlined.",
+    "policyerror": "Please accept the privacy policy.",
+    "motivation": "As a passionate front-end developer, I am looking for exciting challenges where I can contribute my expertise in web development. With my technical know-how and enthusiasm for modern technologies, I would like to become part of an innovative team where I can not only utilise my skills, but also continuously develop them. I am convinced that my analytical mindset and commitment to clean code will make valuable contributions to your projects.",
     "placeholder": {
       "name": "Your name",
       "email": "Your email",
@@ -22,11 +88,8 @@
       }
     }
   },
-  "skill-desc": "The IT landscape is continuously evolving, with new technologies and methodologies. Staying motivated to expand my IT skills requires a strategic approach, a curious mindset, and a commitment to lifelong learning.",
-  "skill-lastdesc": "I am always happy to learn new technologies, just tell me what you need.",
-  "Datenschutz": "privacy policy",
-  "Impressum": "legal notice",
-  "Projekt": "Project",
-  "Let-work": "Let us work together.",
-  "contact-desc": ""
+  "footer": {
+    "policy": "privacy policy",
+    "legal": "legal notice"
+  }
 }

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ContactService } from "../../shared/services/contact-service.service";
 
 @Component({
   selector: 'app-contact',
@@ -15,9 +16,11 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class ContactComponent {
+  readonly MIN_LENGTH = 4;
+  readonly EMAIL_PATTERN = "[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}";
   http = inject(HttpClient);
-
   mailTest = true;
+
 
   post = {
     endPoint: 'https://localhost/sendMail.php',
@@ -29,9 +32,6 @@ export class ContactComponent {
       },
     },
   };
-
-  readonly MIN_LENGTH = 4;
-  readonly EMAIL_PATTERN = "[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}";
 
   formData = {
     name: '',
@@ -76,36 +76,48 @@ export class ContactComponent {
     hasError: false
   };
 
+  constructor(private contactService: ContactService) {}
+
+
   validateForm() {
-    this.formErrors = {
-      name: false,
-      email: false,
-      message: false,
-      policy: false
-    };
-
+    this.formErrors = {name: false, email: false, message: false, policy: false};
     let hasError = false;
-
-    if (this.formData.name.trim().length < this.MIN_LENGTH) {
-      this.formErrors.name = true;
-      hasError = true;
-    }
-    if (!this.formData.email.match(this.EMAIL_PATTERN)) {
-      this.formErrors.email = true;
-      hasError = true;
-    }
-    if (this.formData.message.trim().length < this.MIN_LENGTH) {
-      this.formErrors.message = true;
-      hasError = true;
-    }
-
+    hasError = this.validateName();
+    hasError = this.validateEmail();
+    hasError = this.validateMessage();
     if (!this.formData.policy) {
       this.checkboxState.hasError = true;
       this.formErrors.policy = true;
       hasError = true;
     }
-
     return !hasError;
+  }
+
+  validateName() {
+    if (this.formData.name.trim().length < this.MIN_LENGTH) {
+      this.formErrors.name = true;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  validateEmail() {
+    if (!this.formData.email.match(this.EMAIL_PATTERN)) {
+      this.formErrors.email = true;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  validateMessage() {
+    if (this.formData.message.trim().length < this.MIN_LENGTH) {
+      this.formErrors.message = true;
+      return true;
+    } else {
+      return false;
+    }
   }
 
   onSubmit(ngForm: NgForm) {
@@ -114,7 +126,7 @@ export class ContactComponent {
         this.http.post(this.post.endPoint, this.post.body(this.formData))
           .subscribe({
             next: (response) => {
-
+              this.toggleCheckbox()
               ngForm.resetForm();
             },
             error: (error) => {
@@ -123,7 +135,7 @@ export class ContactComponent {
             complete: () => console.info('send post complete'),
           });
       } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
+        this.toggleCheckbox()
         ngForm.resetForm();
       }
     }
@@ -160,15 +172,39 @@ export class ContactComponent {
 
   getValidationIcon(field: 'name' | 'email' | 'message'): string {
     if (this.formData[field] && !this.formErrors[field]) {
-      return 'assets/img/input-check.svg';
+      return 'assets/img/check_ok.svg';
     }
     if (this.formErrors[field]) {
-      return 'assets/img/input-error.svg';
+      return 'assets/img/check_error.svg';
     }
     return '';
   }
 
   shouldShowIcon(field: 'name' | 'email' | 'message'): boolean {
+    if (!this.formData[field]) return false;
     return this.formData[field].length > 0 || this.formErrors[field];
+  }
+
+  validateOnChange(field: 'name' | 'email' | 'message') {
+    if (!this.formData[field]) return;
+    switch(field) {
+        case 'name':
+            this.formErrors.name = this.formData.name.trim().length < this.MIN_LENGTH;
+          break;
+        case 'email':
+            this.formErrors.email = !this.formData.email.match(this.EMAIL_PATTERN);
+          break;
+        case 'message':
+            this.formErrors.message = this.formData.message.trim().length < this.MIN_LENGTH;
+          break;
+    }
+  }
+
+  onEmailClick() {
+    this.contactService.sendEmail();
+  }
+
+  onPhoneClick() {
+    this.contactService.callPhone();
   }
 }

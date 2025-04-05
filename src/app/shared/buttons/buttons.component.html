@@ -1,1 +1,3 @@
-<button (click)="onNavigate()" type="button">{{ name }}</button>
+<button (click)="onNavigate()" type="button" [attr.aria-label]="name">
+    {{ name }}
+  </button>
