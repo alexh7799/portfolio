@@ -4,25 +4,31 @@
     padding: 20px;
     width: 100%;
 
-    h1, h2, h3 {
-        color: $primaryColor !important;
-    }
+    ::ng-deep {
 
-    a {
-        color: $secandColor !important;
-
-        &:hover {
-            color: #D3ED97 !important;
-        }
-
-        &.active-a {
+        h1,
+        h2,
+        h3 {
             color: $primaryColor !important;
-            text-decoration: underline;
         }
-    } 
+
+        a {
+            color: $secandColor !important;
+
+            &:hover {
+                color: #D3ED97 !important;
+            }
+
+            &.active-a {
+                color: $primaryColor !important;
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
-@media only screen and (min-width: 720px) and (min-height: 570px)  {
+@media only screen and (min-width: 720px) and (min-height: 810px) {
+
     .container {
         padding: 20px;
         height: 100%;
@@ -30,41 +36,50 @@
         width: 100%;
     }
 
-    section {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        column-gap: 20px;
-        overflow: hidden;
+    ::ng-deep {
+        section {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            overflow: hidden;
 
-        h1, h2, h3, p, ul, span {
-            width: calc(100vw - 130px);
-            break-inside: avoid; // Verhindert Umbruch innerhalb des Elements
-            margin: 10px 0;
-            margin-right: 20px;
-        }
-
-        h1, h2, h3 {
-            color: $primaryColor !important;
-        }
-
-        li {
-            margin-right: 20px;
-        }
-
-        a {
-            color: $secandColor !important;
-    
-            &:hover {
-                color: #D3ED97 !important;
+            h1,
+            h2,
+            h3,
+            p,
+            ul,
+            span {
+                width: calc(100vw - 130px);
+                break-inside: avoid;
+                margin: 10px 0;
+                margin-right: 40px;
             }
-    
-            &.active-a {
+
+            h1,
+            h2,
+            h3 {
                 color: $primaryColor !important;
-                text-decoration: underline;
             }
-        } 
+
+            li {
+                margin-right: 20px;
+            }
+
+            a {
+                color: $secandColor !important;
+
+                &:hover {
+                    color: #D3ED97 !important;
+                }
+
+                &.active-a {
+                    color: $primaryColor !important;
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 }

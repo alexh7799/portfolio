@@ -1,5 +1,3 @@
-
-
 {
   "why": {
     "title": "Why me",
@@ -52,17 +50,17 @@
     "desc": "Here what my colleagues said about me",
     "references": {
       "1": {
-        "name": "Miriam",
+        "name": "Miriam Schmidt",
         "project": "Project Join",
         "desc": "He is a team player who is always willing to share his knowledge and help others."
       },
       "2": {
-        "name": "Max",
+        "name": "Maximilian Becker",
         "project": "Project Pokedex",
         "desc": "He has a remarkable ability to solve complex problems and find innovative solutions."
       },
       "3": {
-        "name": "Anna",
+        "name": "Anna Müller",
         "project": "Project Dark Magic",
         "desc": "He has an impressive ability to communicate complex ideas clearly and effectively."
       }
@@ -91,5 +89,11 @@
   "footer": {
     "policy": "privacy policy",
     "legal": "legal notice"
-  }
+  },
+  "policy": {
+    "title": "Datenschutz",
+    "desc": "Wir nehmen den Schutz Ihrer Daten ernst. Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben. Weitere Informationen finden Sie in unserer Datenschutzerklärung.",
+    "button": "Zurück"
+  },
+  "legal-notice": "<h1>Legal Notice</h1> <h2><span>Provider</span></h2><p> <span>Alexander Hörst <br> Ostenwalder str. 6 <br> 48477 Hörstel</span></p> <h2><span>Contact</span></h2> <p><span>E-Mail: hoerst.alexander&#64;gmail.com <br> Telefon: 12345 254645363</span></p> <h2><span>Disclaimer</span></h2> <p>We are responsible for the content of our website in accordance with the provisions of general law. All content is created with due care and to the best of our knowledge. Insofar as we refer to third-party websites on our Internet pages by means of hyperlinks, we cannot assume any liability for the continued topicality, correctness and completeness of the linked content, as this content is outside our area of responsibility and we have no influence on its future design. Should you consider any content to be in breach of applicable law or inappropriate, please let us know.</p> <p>The legal information on this page and all questions and disputes in connection with the design of this website are subject to the law of the Federal Republic of Germany.</p> <h2><span>Copyright notice</span></h2> <p>The texts, images, photos, videos or graphics on our website are generally protected by copyright. Any unauthorised use (in particular the reproduction, editing or distribution) of this copyright-protected content is therefore prohibited. If you intend to use this content or parts thereof, please contact us in advance using the details above. If we are not ourselves the owner of the required copyright usage rights, we will endeavour to arrange contact with the authorised party.</p> <p><span>Created with the kind support of <a href='https://www.dieter-datenschutz.de/' [class.active-link]='legal.isActive' (mousedown)='legal.isActive = true'>Dieter macht den Datenschutz</a></span></p>"
 }

@@ -15,6 +15,8 @@ import { inject } from '@angular/core';
 
 export class ReferenceComponent {
   activeSection: number = 0;
+  private viewportRuler = inject(ViewportRuler);
+  private screenWidth: number = 0;
   @ViewChild('referenceContainer') referenceContainer!: ElementRef;
   
   references = [
@@ -31,14 +33,12 @@ export class ReferenceComponent {
     });
   }
 
-  private viewportRuler = inject(ViewportRuler);
-  private screenWidth: number = 0;
-
   constructor() {
     this.screenWidth = this.viewportRuler.getViewportSize().width;
   }
 
   @HostListener('window:resize')
+  
   onResize() {
     this.screenWidth = this.viewportRuler.getViewportSize().width;
     this.updateActiveButton();
@@ -49,7 +49,6 @@ export class ReferenceComponent {
   }
 
   ngOnInit() {
-    // ViewportRuler subscription für live updates
     this.viewportRuler.change().subscribe(() => {
       this.screenWidth = this.viewportRuler.getViewportSize().width;
       this.updateActiveButton();
@@ -75,7 +74,4 @@ export class ReferenceComponent {
       container.scrollTo({ left: scrollPosition, behavior: 'smooth'});
     }
   }
-
-
 }
-

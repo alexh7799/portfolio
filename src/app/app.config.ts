@@ -11,7 +11,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(),importProvidersFrom(
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(), importProvidersFrom(
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -20,5 +20,5 @@ export const appConfig: ApplicationConfig = {
       },
       defaultLanguage: 'de'
     })
-  ),provideHttpClient()]
+  ), provideHttpClient()]
 };

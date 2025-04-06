@@ -28,7 +28,5 @@ export class SkillsComponent {
     {image: 'challenge.svg', name: 'skill.skillIcon'}
   ]
 
-  constructor() {
-
-  }
+  constructor() {}
 }

@@ -16,8 +16,13 @@ import { TranslateModule } from '@ngx-translate/core';
 export class PolicyComponent implements AfterViewInit, OnDestroy {
   @ViewChild('desktopContainer') container?: ElementRef;
   private scrollMultiplier = 0.5;
-  legal = {isActive: false}
-  policy = {isActive: false}
+
+  policy = {
+    isActive: false
+  }
+  legalnotice = {
+    isActive: false
+  }
 
   constructor() { }
 
@@ -44,5 +49,4 @@ export class PolicyComponent implements AfterViewInit, OnDestroy {
       });
     };
   }
-
 }

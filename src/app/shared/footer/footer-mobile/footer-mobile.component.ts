@@ -25,7 +25,7 @@ export class FooterMobileComponent {
   onNavigate(sectionId: string) {
     this.activeSection = sectionId;
     if (this.activeSection === 'hero-mobile') {
-      this.router.navigate(['/']); // Navigation zur Startseite
+      this.router.navigate(['/']);
     }
     this.scrollbarToSectionService.scrollToSection(sectionId);
   }

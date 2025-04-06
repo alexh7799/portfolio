@@ -11,8 +11,8 @@
         (mouseleave)="changeImage(2, false)" (click)="openExternalLink('https://github.com/alexh7799')"/>
     </div>
     <div class="lang-container hide-desktop">
-        <span class="pointer" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">EN</span>
+        <span class="pointer" [class.active]="languageService.currentLang === 'en'" (click)="switchLanguage('en')">EN</span>
         <span> | </span>
-        <span class="pointer" [class.active]="currentLang === 'de'" (click)="switchLanguage('de')">DE</span>
+        <span class="pointer" [class.active]="languageService.currentLang === 'de'" (click)="switchLanguage('de')">DE</span>
     </div>
 </div>

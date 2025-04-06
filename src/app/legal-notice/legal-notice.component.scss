@@ -21,9 +21,23 @@
                 #0b0a0a 70%);
         padding: 0;
     }
+
+    .arrow-text-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+    
+        app-arrow {
+            height: 30px;
+            width: 64px;
+            align-self: center;
+            transform: rotate(-90deg) scale(0.8);
+        }
+    }
 }
 
-@media only screen and (min-width: 720px) and (min-height: 570px) {
+@media only screen and (min-width: 720px) and (min-height: 810px) {
     app-social-media {
         display: flex;
         justify-content: end;
@@ -47,6 +61,7 @@
         overflow-x: auto;
         overflow-y: hidden;
         background-color: $primaryColor;
+        font-size: 14px;
 
         >.background {
             display: flex;
@@ -74,15 +89,6 @@
                 min-width: calc(100vw - 200px);
             }
         }
-
-            // &::-webkit-scrollbar {
-            //     display: none;
-            // }
-
-            // -ms-overflow-style: none;
-            // scrollbar-width: none;
-        
-
     }
 
     app-footer-desktop {
@@ -93,9 +99,9 @@
     .arrow-text-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        width: 350px;
+        justify-content: space-between !important;
+        height: 100% !important;
+        width: 350px !important;
         margin-left: 40px;
         padding-right: 20px;
 
@@ -126,8 +132,10 @@
         }
 
         app-arrow {
-            align-self: flex-end;
-            transform: rotate(-180deg);
+            height: auto !important;
+            width: auto !important;
+            align-self: flex-end !important;
+            transform: rotate(-180deg) scale(1) !important;
         }
 
         >div:last-child {
@@ -135,7 +143,7 @@
             flex-direction: column;
             align-items: flex-end;
             align-self: flex-end;
-            gap: 30px;
+            gap: 15px;
 
             .link {
                 text-align: end;

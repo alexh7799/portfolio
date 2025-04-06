@@ -26,9 +26,9 @@
                 <span>{{'nav.contact' | translate }}</span>
             </div>
             <div class="lang-container">
-                <span class="pointer" [class.active]="currentLang === 'en'" (click)="switchLanguage('en')">EN</span>
+                <span class="pointer" [class.active]="languageService.currentLang === 'en'" (click)="switchLanguage('en')">EN</span>
                 <div class="line"></div>
-                <span class="pointer" [class.active]="currentLang === 'de'" (click)="switchLanguage('de')">DE</span>
+                <span class="pointer" [class.active]="languageService.currentLang === 'de'" (click)="switchLanguage('de')">DE</span>
             </div>
         </div>
     </div>

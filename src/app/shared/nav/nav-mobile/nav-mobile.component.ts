@@ -3,6 +3,7 @@ import { ScrollbarToSectionService } from '../../services/scrollbar-to-section.s
 import { Subscription } from 'rxjs';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { LanguageService } from '../../services/language-service.service';
 
 @Component({
   selector: 'app-nav-mobile',
@@ -12,30 +13,36 @@ import { Router } from '@angular/router';
   styleUrl: './nav-mobile.component.scss'
 })
 export class NavMobileComponent {
-  currentLang: string = 'de';
   isMenuOpen = false;
   activeSection: string = 'hero-mobile';
   private subscription: Subscription;
 
-  constructor(private scrollbarToSectionService: ScrollbarToSectionService, private translate: TranslateService, private router: Router) {
+  constructor(
+    private scrollbarToSectionService: ScrollbarToSectionService,
+    public languageService: LanguageService,
+    private router: Router
+  ) {
     this.subscription = this.scrollbarToSectionService.activeSection$.subscribe(
       section => this.activeSection = section
     );
-    translate.setDefaultLang('de');
-    this.currentLang = translate.currentLang || 'de';
   }
 
   switchLanguage(lang: string) {
-    this.translate.use(lang);
-    this.currentLang = lang;
+    this.languageService.switchLanguage(lang);
   }
 
   onNavigate(sectionId: string) {
     this.activeSection = sectionId;
-    if (this.activeSection === 'hero-mobile') {
-      this.router.navigate(['/']); // Navigation zur Startseite
+    if (this.router.url !== '/') {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          this.scrollbarToSectionService.scrollToSection(sectionId);
+        }, 100);
+      });
+    } else {
+      this.scrollbarToSectionService.scrollToSection(sectionId);
     }
-    this.scrollbarToSectionService.scrollToSection(sectionId);
+    this.isMenuOpen = false;
   }
 
   theRespMenu() {

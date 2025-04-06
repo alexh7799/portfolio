@@ -31,9 +31,14 @@ export class NavDesktopComponent {
 
   onNavigate(sectionId: string) {
     this.activeSection = sectionId;
-    if (this.activeSection === 'hero') {
-      this.router.navigate(['/']); // Navigation zur Startseite
+    if (this.router.url !== '/') {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          this.scrollbarToSectionService.scrollToSection(sectionId);
+        }, 100);
+      });
+    } else {
+      this.scrollbarToSectionService.scrollToSection(sectionId);
     }
-    this.scrollbarToSectionService.scrollToSection(sectionId);
   }
 }

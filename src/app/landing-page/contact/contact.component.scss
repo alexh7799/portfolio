@@ -233,7 +233,6 @@ input:-internal-autofill-selected {
     .container {
         padding: 60px 60px;
     }
-    
 }
 
 @media only screen and (min-width: 720px) and (min-height: 810px) {
@@ -263,6 +262,7 @@ input:-internal-autofill-selected {
     }
 
     .contact-input-container {
+        width: 400px !important;
         .input-wrapper {
             .validation-icon {
                 display: none;

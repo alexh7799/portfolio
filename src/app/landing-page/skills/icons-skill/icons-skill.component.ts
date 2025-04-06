@@ -9,6 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './icons-skill.component.scss'
 })
 export class IconsSkillComponent {
-    @Input() icon!: { image: string, name: string };
-    @Input() isLast: boolean = false;
+  @Input() icon!: { image: string, name: string };
+  @Input() isLast: boolean = false;
 }

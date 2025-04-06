@@ -8,7 +8,6 @@ export class ScrollbarToSectionService {
   private activeSection = new Subject<string>();
   activeSection$ = this.activeSection.asObservable();
 
-
   constructor() { }
 
   scrollToSection(sectionId: string) {

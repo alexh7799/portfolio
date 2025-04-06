@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule} from '@ngx-translate/core';
 import { ContactService } from '../../shared/services/contact-service.service';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../shared/services/language-service.service';
 
 @Component({
   selector: 'app-social-media',
@@ -27,14 +28,10 @@ export class SocialMediaComponent {
     },
   ];
 
-  constructor(private translate: TranslateService, private contactService: ContactService) {
-    translate.setDefaultLang('de');
-    this.currentLang = translate.currentLang || 'de';
-  }
+  constructor(public languageService: LanguageService, private contactService: ContactService) {}
 
   switchLanguage(lang: string) {
-    this.translate.use(lang);
-    this.currentLang = lang;
+    this.languageService.switchLanguage(lang);
   }
 
   changeImage(index: number, isHovered: boolean) {
