@@ -68,6 +68,12 @@
                 <button [class.disabled]="!checkboxState.isChecked" type="submit" value="Submit">{{ 'contact.button' |
                     translate }}</button>
             </form>
+            <div class="send-info-container" *ngIf="showSendInfo">
+                <div class="send-info" [ngClass]="{'error': !sendSuccess}">
+                    <img [src]="sendSuccess ? 'assets/img/check_ok.svg' : 'assets/img/check_error.svg'" alt="sendinfo">
+                    <span>{{ (sendSuccess ? 'contact.sendinfo' : 'contact.senderror') | translate }}</span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="arrow-text-container">

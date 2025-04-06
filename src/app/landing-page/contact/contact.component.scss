@@ -52,12 +52,12 @@
 
         .warning-input {
             border: 1px solid #FF4438 !important;
-        
+
             &::placeholder {
                 color: #FF4438;
             }
         }
-        
+
         .warning-text {
             color: #FF4438;
             display: block !important;
@@ -77,7 +77,7 @@
                     color: #D3ED97;
                 }
 
-                .active-link{
+                .active-link {
                     color: $primaryColor !important;
                     text-decoration: underline;
                 }
@@ -89,17 +89,17 @@
             height: 22px;
             width: 22px;
             transition: all 0.2s ease-in-out;
-        
+
             &:hover {
                 transform: scale(1.1);
             }
         }
-        
+
         .policy-error {
             display: none;
             margin-top: -15px;
             margin-left: 50px;
-            
+
             &.warning-text {
                 display: block;
             }
@@ -117,12 +117,13 @@
         .input-wrapper {
             position: relative;
             width: 100%;
-    
-            input, textarea {
+
+            input,
+            textarea {
                 width: 100%;
                 padding-right: 40px;
             }
-    
+
             .validation-icon {
                 position: absolute;
                 right: 12px;
@@ -131,8 +132,8 @@
                 width: 20px;
                 pointer-events: none;
             }
-    
-            textarea ~ .validation-icon {
+
+            textarea~.validation-icon {
                 top: 15px;
                 transform: none;
             }
@@ -157,7 +158,8 @@
     }
 }
 
-.email-container, .phone-container {
+.email-container,
+.phone-container {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -169,18 +171,20 @@
         margin-right: -8px;
     }
 
-    .email-span, .phone-span {
+    .email-span,
+    .phone-span {
         color: $secandColor !important;
 
         &:hover {
             color: #D3ED97 !important;
         }
 
-        &.active-email, &.active-phone {
+        &.active-email,
+        &.active-phone {
             color: $primaryColor !important;
             text-decoration: underline;
         }
-    }    
+    }
 }
 
 .arrow-text-container {
@@ -229,9 +233,63 @@ input:-internal-autofill-selected {
     -webkit-text-fill-color: $secandColor !important;
 }
 
+.send-info-container {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+
+    .send-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 24px;
+        background: $primaryColor;
+        color: $frontColor;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        &.error {
+            background: #f44336;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+
+        span {
+            font-size: 16px;
+        }
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
 @media screen and (min-width: 470px) {
     .container {
         padding: 60px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .send-info-container {
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
     }
 }
 
@@ -263,6 +321,7 @@ input:-internal-autofill-selected {
 
     .contact-input-container {
         width: 400px !important;
+
         .input-wrapper {
             .validation-icon {
                 display: none;
@@ -356,7 +415,7 @@ input:-internal-autofill-selected {
                     color: #D3ED97;
                 }
 
-                .active-link{
+                .active-link {
                     color: $primaryColor !important;
                     text-decoration: underline;
                 }

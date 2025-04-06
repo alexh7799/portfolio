@@ -6,6 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ContactService } from "../../shared/services/contact-service.service";
+import { on } from 'events';
 
 @Component({
   selector: 'app-contact',
@@ -20,10 +21,11 @@ export class ContactComponent {
   readonly EMAIL_PATTERN = "[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}";
   http = inject(HttpClient);
   mailTest = true;
-
+  showSendInfo = false;
+  sendSuccess = false;
 
   post = {
-    endPoint: 'https://localhost/sendMail.php',
+    endPoint: 'https://alexander-hörst/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -76,11 +78,11 @@ export class ContactComponent {
     hasError: false
   };
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService) { }
 
 
   validateForm() {
-    this.formErrors = {name: false, email: false, message: false, policy: false};
+    this.formErrors = { name: false, email: false, message: false, policy: false };
     let hasError = false;
     hasError = this.validateName();
     hasError = this.validateEmail();
@@ -121,24 +123,36 @@ export class ContactComponent {
   }
 
   onSubmit(ngForm: NgForm) {
-    if(this.validateForm()) {
+    if (this.validateForm()) {
       if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
         this.http.post(this.post.endPoint, this.post.body(this.formData))
           .subscribe({
-            next: (response) => {
-              this.toggleCheckbox()
-              ngForm.resetForm();
-            },
-            error: (error) => {
-              console.error(error);
-            },
+            next: (response) => { this.onSendMail(ngForm); },
+            error: (error) => { this.onErrorSendMail();},
             complete: () => console.info('send post complete'),
           });
       } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-        this.toggleCheckbox()
-        ngForm.resetForm();
+        this.onSendMail(ngForm);
       }
     }
+  }
+
+  onSendMail(ngForm: NgForm) {
+    this.sendSuccess = true;
+    this.showSendInfo = true;
+    this.toggleCheckbox();
+    ngForm.resetForm();
+    setTimeout(() => {
+      this.showSendInfo = false;
+    }, 3000);
+  }
+
+  onErrorSendMail() {
+    this.sendSuccess = false;
+    this.showSendInfo = true;
+    setTimeout(() => {
+      this.showSendInfo = false;
+    }, 3000);
   }
 
   getCheckboxImage(): string {
@@ -187,16 +201,16 @@ export class ContactComponent {
 
   validateOnChange(field: 'name' | 'email' | 'message') {
     if (!this.formData[field]) return;
-    switch(field) {
-        case 'name':
-            this.formErrors.name = this.formData.name.trim().length < this.MIN_LENGTH;
-          break;
-        case 'email':
-            this.formErrors.email = !this.formData.email.match(this.EMAIL_PATTERN);
-          break;
-        case 'message':
-            this.formErrors.message = this.formData.message.trim().length < this.MIN_LENGTH;
-          break;
+    switch (field) {
+      case 'name':
+        this.formErrors.name = this.formData.name.trim().length < this.MIN_LENGTH;
+        break;
+      case 'email':
+        this.formErrors.email = !this.formData.email.match(this.EMAIL_PATTERN);
+        break;
+      case 'message':
+        this.formErrors.message = this.formData.message.trim().length < this.MIN_LENGTH;
+        break;
     }
   }
 

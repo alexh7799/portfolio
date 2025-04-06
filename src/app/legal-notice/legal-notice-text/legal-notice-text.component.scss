@@ -30,10 +30,11 @@
 @media only screen and (min-width: 720px) and (min-height: 810px) {
 
     .container {
-        padding: 20px;
+        padding: 40px;
         height: 100%;
         overflow: visible;
         width: 100%;
+        margin: 0 auto;
     }
 
     ::ng-deep {
@@ -52,13 +53,21 @@
             p,
             ul,
             span {
-                width: calc(100vw - 130px);
+                width: calc(100vw - 180px);
+                max-width: 1360px;
                 break-inside: avoid;
                 margin: 10px 0;
                 margin-right: 40px;
             }
 
-            h1,
+            h1 {
+                color: transparent !important;
+                -webkit-text-stroke: 1px $primaryColor !important;
+                text-stroke: 1px $primaryColor !important;
+                font-size: 32px !important;
+                font-weight: bold !important;
+            }
+            
             h2,
             h3 {
                 color: $primaryColor !important;
