@@ -237,7 +237,7 @@ input:-internal-autofill-selected {
     position: fixed;
     bottom: 32px;
     right: 32px;
-    z-index: 1000;
+    z-index: 3000;
     animation: slideIn 0.3s ease-out;
 
     .send-info {
@@ -277,8 +277,6 @@ input:-internal-autofill-selected {
     }
 }
 
-
-
 @media screen and (min-width: 470px) {
     .container {
         padding: 60px 60px;
@@ -293,7 +291,7 @@ input:-internal-autofill-selected {
     }
 }
 
-@media only screen and (min-width: 720px) and (min-height: 810px) {
+@media only screen and (min-width: 720px) and (min-height: 570px) {
     .container {
         display: flex;
         flex-direction: row !important;

@@ -9,18 +9,18 @@
                 <ul>
                     <li>
                         <div>
-                            <span class="headline-text">{{item.text[0].headline}}</span>
+                            <span class="headline-text">{{item.text[0].headline | translate}}</span>
                             <span>{{item.text[0].text | translate}}</span></div>
                     </li>
                     <li [class.show-less]="isShowMore == false">
                         <div>
-                            <span class="headline-text">{{item.text[1].headline}}</span>
-                            <span>{{item.text[1].text | translate}}</span>
+                            <span class="headline-text">{{item.text[1].headline | translate}}</span>
+                            <span>{{item.text[1].text}}</span>
                         </div>
                     </li>
                     <li [class.show-less]="isShowMore == false">
                         <div>
-                            <span class="headline-text">{{item.text[2].headline}}</span>
+                            <span class="headline-text">{{item.text[2].headline | translate}}</span>
                             <span>{{item.text[2].text | translate}}</span>
                         </div>
                     </li>

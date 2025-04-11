@@ -30,18 +30,39 @@
     "button": "Let's talk",
     "project1": {
       "title": "Project Join",
-      "about-project": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-      "learning": "In this project, I learned how to implement Firebase as a backend-as-a-service for real-time data synchronisation and user management. The development of the Kanban board with drag & drop gave me valuable insights into the design of interactive user interfaces."
+      "about-project": {
+        "title": "About the project",
+        "desc": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+      },
+      "technologys": "Technologies I have used",
+      "learning": {
+        "title": "What I have learned",
+        "desc": "In this project, I learned how to implement Firebase as a backend-as-a-service for real-time data synchronisation and user management. The development of the Kanban board with drag & drop gave me valuable insights into the design of interactive user interfaces."
+      }
     },
     "project2": {
       "title": "Project Pokedex",
-      "about-project": "An interactive Pokémon encyclopaedia that retrieves data via a REST API and displays detailed information about each Pokémon. The application offers a responsive user interface with search and filter functions.",
-      "learning": "This project taught me how to communicate effectively with REST APIs and process the data received dynamically. The implementation of search functions and filters deepened my understanding of data manipulation and asynchronous programming."
+      "about-project": {
+        "title": "About the project",
+        "desc": "An interactive Pokémon encyclopaedia that retrieves data via a REST API and displays detailed information about each Pokémon. The application offers a responsive user interface with search and filter functions."
+      },
+      "technologys": "Technologies I have used",
+      "learning": {
+        "title": "What I have learned",
+        "desc": "This project taught me how to communicate effectively with REST APIs and process the data received dynamically. The implementation of search functions and filters deepened my understanding of data manipulation and asynchronous programming."
+      }
     },
     "project3": {
       "title": "Project Dark Magic",
-      "about-project": "A jump-and-run game developed with JavaScript and HTML5 Canvas. It offers simple controls and appealing gameplay.",
-      "learning": "In this project, I learnt the basics of object-oriented programming (OOP) with classes and inheritance. The implementation of game logic and character movements gave me a deep understanding of structuring code with OOP."
+      "about-project": {
+        "title": "About the project",
+        "desc": "A jump-and-run game developed with JavaScript and HTML5 Canvas. It offers simple controls and appealing gameplay."
+      },
+      "technologys": "Technologies I have used",
+      "learning": {
+        "title": "What I have learned",
+        "desc": "In this project, I learnt the basics of object-oriented programming (OOP) with classes and inheritance. The implementation of game logic and character movements gave me a deep understanding of structuring code with OOP."
+      }
     }
   },
   "references": {

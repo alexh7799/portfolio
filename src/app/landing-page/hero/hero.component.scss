@@ -25,7 +25,7 @@
                 font-size: 35px;
                 font-weight: 700;
                 color: $primaryColor;
-                margin: 0 0 40px 0;
+                margin: 0 0 60px 0;
             }
 
             h2 {
@@ -52,7 +52,7 @@
     
 }
 
-@media only screen and (min-width: 720px) and (min-height: 810px) {
+@media only screen and (min-width: 720px) and (min-height: 570px) {
     .hero-container {
         display: flex;
         height: 100%;

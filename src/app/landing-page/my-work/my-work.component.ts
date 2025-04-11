@@ -21,16 +21,16 @@ export class MyWorkComponent {
       title: 'project.project1.title', 
       text: [
         { 
-          headline: 'About the project', 
-          text: 'project.project1.about-project' 
+          headline: 'project.project1.about-project.title', 
+          text: 'project.project1.about-project.desc' 
         }, 
         { 
-          headline: 'Technologies I have used', 
+          headline: 'project.project1.technologys', 
           text: 'JavaScript, HTML, CSS, Firebase' 
         }, 
         { 
-          headline: 'What I have  learned', 
-          text: 'project.project1.learning' 
+          headline: 'project.project1.learning.title', 
+          text: 'project.project1.learning.desc' 
         }
       ], 
       img: 'join-screenshot.svg',
@@ -42,16 +42,16 @@ export class MyWorkComponent {
       title: 'project.project2.title', 
       text: [
         { 
-          headline: 'About the project', 
-          text: 'project.project2.about-project' 
+          headline: 'project.project2.about-project.title', 
+          text: 'project.project2.about-project.desc' 
         }, 
         { 
-          headline: 'Technologies I have used', 
+          headline: 'project.project2.technologys', 
           text: 'JavaScript, HTML, CSS, Rest API' 
         }, 
         { 
-          headline: 'What I have  learned', 
-          text: 'project.project2.learning' 
+          headline: 'project.project2.learning.title', 
+          text: 'project.project2.learning.desc' 
         }
       ], 
       img: 'pokedex.svg',
@@ -63,16 +63,16 @@ export class MyWorkComponent {
       title: 'project.project3.title', 
       text: [
         { 
-          headline: 'About the project', 
-          text: 'project.project3.about-project' 
+          headline: 'project.project3.about-project.title', 
+          text: 'project.project3.about-project.desc' 
         }, 
         { 
-          headline: 'Technologies I have used', 
+          headline: 'project.project3.technologys', 
           text: 'JavaScript, HTML, CSS' 
         }, 
         { 
-          headline: 'What I have  learned', 
-          text: 'project.project3.learning' 
+          headline: 'project.project3.learning.title', 
+          text: 'project.project3.learning.desc' 
         }
       ], 
       img: 'dark-magic.svg',

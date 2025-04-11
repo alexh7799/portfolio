@@ -1,12 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { ButtonsComponent } from "../../shared/buttons/buttons.component";
 import { ArrowComponent } from "../../shared/arrow/arrow.component";
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ContactService } from "../../shared/services/contact-service.service";
-import { on } from 'events';
 
 @Component({
   selector: 'app-contact',
@@ -25,7 +23,7 @@ export class ContactComponent {
   sendSuccess = false;
 
   post = {
-    endPoint: 'https://alexander-hörst/sendMail.php',
+    endPoint: 'https://xn--alexander-hrst-5pb.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -124,12 +122,12 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (this.validateForm()) {
-      if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      if (ngForm.submitted && ngForm.form.valid) {
         this.http.post(this.post.endPoint, this.post.body(this.formData))
           .subscribe({
             next: (response) => { this.onSendMail(ngForm); },
             error: (error) => { this.onErrorSendMail();},
-            complete: () => console.info('send post complete'),
+            complete: () => { this.onSendMail(ngForm); }
           });
       } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
         this.onSendMail(ngForm);

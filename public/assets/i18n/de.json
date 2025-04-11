@@ -30,18 +30,39 @@
     "ongoing-desc": "Ich entwickle derzeit einen innovativen 3D-Online-Shop mit Three.js, der es Kunden ermöglicht, Produkte in einem immersiven 3D-Raum zu erkunden und aus verschiedenen Perspektiven zu betrachten. Bei diesem Projekt wende ich moderne Webtechnologien wie Three.js für 3D-Rendering, WebGL für Grafikoptimierung und eine REST-API für das Backend an, wobei eine sorgfältige Planung der Benutzerinteraktion und Performance-Optimierung im Mittelpunkt steht.",
     "project1": {
       "title": "Projekt Join",
-      "about-project": "Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben per Drag & Drop und weisen Sie Benutzer und Kategorien zu.",
-      "learning": "In diesem Projekt habe ich gelernt, wie man Firebase als Backend-as-a-Service für Echtzeit-Datensynchronisation und Benutzerverwaltung implementiert. Die Entwicklung des Kanban-Boards mit Drag & Drop hat mir wertvolle Einblicke in die Gestaltung interaktiver Benutzeroberflächen gegeben."
+      "about-project": {
+        "title": "Über das Projekt",
+        "desc": "Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben per Drag & Drop und weisen Sie Benutzer und Kategorien zu."
+      },
+      "technologys": "Technologien die ich verwendet habe",
+      "learning": {
+        "title": "Was habe ich gelernt",
+        "desc": "In diesem Projekt habe ich gelernt, wie man Firebase als Backend-as-a-Service für Echtzeit-Datensynchronisation und Benutzerverwaltung implementiert. Die Entwicklung des Kanban-Boards mit Drag & Drop hat mir wertvolle Einblicke in die Gestaltung interaktiver Benutzeroberflächen gegeben."
+      }
     },
     "project2": {
       "title": "Projekt Pokedex",
-      "about-project": "Eine interaktive Pokémon-Enzyklopädie, die Daten über eine REST-API abruft und detaillierte Informationen zu jedem Pokémon anzeigt. Die Anwendung bietet eine responsive Benutzeroberfläche mit Such- und Filterfunktionen.",
-      "learning": "Bei diesem Projekt habe ich gelernt, wie man effektiv mit REST-APIs kommuniziert und die erhaltenen Daten dynamisch verarbeitet. Die Implementierung von Suchfunktionen und Filtern hat mein Verständnis für Datenmanipulation und asynchrone Programmierung vertieft."
+      "about-project": {
+        "title": "Über das Projekt",
+        "desc": "Eine interaktive Pokémon-Enzyklopädie, die Daten über eine REST-API abruft und detaillierte Informationen zu jedem Pokémon anzeigt. Die Anwendung bietet eine responsive Benutzeroberfläche mit Such- und Filterfunktionen."
+      },
+      "technologys": "Technologien die ich verwendet habe",
+      "learning": {
+        "title": "Was habe ich gelernt",
+        "desc": "Bei diesem Projekt habe ich gelernt, wie man effektiv mit REST-APIs kommuniziert und die erhaltenen Daten dynamisch verarbeitet. Die Implementierung von Suchfunktionen und Filtern hat mein Verständnis für Datenmanipulation und asynchrone Programmierung vertieft."
+      }
     },
     "project3": {
       "title": "Projekt Dark Magic",
-      "about-project": "Ein Jump-and-Run-Spiel, das mit JavaScript und HTML5 Canvas entwickelt wurde. Es bietet eine einfache Steuerung und ein ansprechendes Gameplay.",
-      "learning": "In diesem Projekt habe ich die Grundlagen der objektorientierten Programmierung (OOP) mit Klassen und Vererbung kennengelernt. Die Implementierung von Spielelogik und Character-Bewegungen hat mir ein tiefes Verständnis für die Strukturierung von Code mit OOP vermittelt."
+      "about-project": {
+        "title": "Über das Projekt",
+        "desc": "Ein Jump-and-Run-Spiel, das mit JavaScript und HTML5 Canvas entwickelt wurde. Es bietet eine einfache Steuerung und ein ansprechendes Gameplay."
+      },
+      "technologys": "Technologien die ich verwendet habe",
+      "learning": {
+        "title": "Was habe ich gelernt",
+        "desc": "In diesem Projekt habe ich die Grundlagen der objektorientierten Programmierung (OOP) mit Klassen und Vererbung kennengelernt. Die Implementierung von Spielelogik und Character-Bewegungen hat mir ein tiefes Verständnis für die Strukturierung von Code mit OOP vermittelt."
+      }
     }
   },
   "references": {
