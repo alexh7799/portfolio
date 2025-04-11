@@ -77,7 +77,7 @@ export class MyWorkComponent {
       ], 
       img: 'dark-magic.svg',
       github: 'https://github.com/alexh7799/Dark-Magic', 
-      livelink: 'https://join.Alexander-Hörst.de/' 
+      livelink: 'https://dark-magic.Alexander-Hörst.de/' 
     }
   ]
 }

@@ -20,7 +20,7 @@ export class ContactComponent {
   readonly MIN_LENGTH = 4;
   readonly EMAIL_PATTERN = "[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}";
   http = inject(HttpClient);
-  mailTest = true;
+  mailTest = false;
   showSendInfo = false;
   sendSuccess = false;
 

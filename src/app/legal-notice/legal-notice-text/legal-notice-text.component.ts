@@ -23,10 +23,7 @@ export class LegalNoticeTextComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    // Initial Übersetzung
     this.updateContent();
-
-    // Auf Sprachänderungen reagieren
     this.langChangeSubscription = this.translateService.onLangChange.subscribe(() => {
       this.updateContent();
     });
