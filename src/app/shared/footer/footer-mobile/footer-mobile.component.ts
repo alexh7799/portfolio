@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ScrollbarToSectionService } from '../../services/scrollbar-to-section.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -10,7 +10,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [TranslateModule],
   templateUrl: './footer-mobile.component.html',
-  styleUrl: './footer-mobile.component.scss'
+  styleUrl: './footer-mobile.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class FooterMobileComponent {
   activeSection: string = 'hero';

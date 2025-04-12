@@ -19,7 +19,7 @@
                 #0b0a0a 46%,
                 #181818 58%,
                 #0b0a0a 70%);
-        padding: 0;
+        padding: 0 !important;
     }
     
     .arrow-text-container {
@@ -37,15 +37,7 @@
     }
 }
 
-@media (min-height: 570px)  {
-    .container {
-    >.background {
-            padding: 120px 0 40px 0;
-        }
-    }
-}
-
-@media only screen and (min-width: 720px) and (min-height: 810px) {
+@media only screen and (min-width: 720px) and (min-height: 570px) {
     app-social-media {
         display: flex;
         justify-content: end;
@@ -172,6 +164,15 @@
                 margin: 0;
                 color: $secandColor;
             }
+        }
+    }
+}
+
+
+@media (min-height: 810px)  {
+    .container {
+    >.background {
+            padding: 120px 0 40px 0;
         }
     }
 }

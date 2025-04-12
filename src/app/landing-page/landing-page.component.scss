@@ -7,6 +7,7 @@
     overflow-x: hidden;
     scroll-behavior: auto;
     scroll-snap-align: start;
+    margin-top: 80px;
 
     >.background {
         display: flex;
@@ -18,7 +19,7 @@
                 #0b0a0a 46%,
                 #181818 58%,
                 #0b0a0a 70%);
-        padding: 0;
+        padding: 0 !important;
     }
 }
 
@@ -42,6 +43,7 @@
         overflow-x: auto;
         overflow-y: hidden;
         background-color: $primaryColor;
+        margin-top: 0 !important;
 
         >.background {
             display: flex;
@@ -57,7 +59,7 @@
                     #0b0a0a 46%,
                     #181818 58%,
                     #0b0a0a 70%);
-            padding: 80px 0 30px 0;
+            padding: 80px 0 30px 0 !important;
             min-width: max-content;
 
             >* {
@@ -77,10 +79,10 @@
     }
 }
 
-@media (min-height: 810px)  {
+@media only screen and (min-width: 720px) and (min-height: 810px)  {
     .container {
     >.background {
-            padding: 120px 0 60px 0;
+            padding: 120px 0 60px 0 !important;
         }
     }
 }

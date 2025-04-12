@@ -318,12 +318,16 @@ input:-internal-autofill-selected {
     }
 
     .contact-input-container {
-        width: 400px !important;
+        width: 430px !important;
 
         .input-wrapper {
             .validation-icon {
                 display: none;
             }
+        }
+
+        textarea {
+            height: 200px !important;
         }
     }
 
@@ -361,7 +365,7 @@ input:-internal-autofill-selected {
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        width: 350px;
+        width: 450px;
         margin-left: 40px;
         padding-right: 20px;
 
@@ -376,7 +380,7 @@ input:-internal-autofill-selected {
             align-self: flex-end;
             align-items: end;
             gap: 20px;
-            width: 300px;
+            width: 400px;
 
             >span:first-child {
                 font-size: 20px;

@@ -1,10 +1,21 @@
 @import './../../../../../styles.scss';
 
+@media only screen and (min-width: 720px) and (min-height: 570px)  {
+    .project-container {
+        width: 900px !important;
+    }
+}
+
+@media only screen and (min-width: 720px) and (min-height: 810px)  {
+    .project-container {
+        width: 700px !important;
+    }
+}
+
 .project-container {
     background-color: rgba(181, 233, 59, 0.30);
     padding: 20px 30px;
     border-radius: 20px;
-    width: 700px;
 
     .project-header-container {
         color: $primaryColor;
