@@ -5,11 +5,12 @@ import { LegalNoticeTextComponent } from "./legal-notice-text/legal-notice-text.
 import { ArrowComponent } from '../shared/arrow/arrow.component';
 import { SocialMediaComponent } from '../landing-page/social-media/social-media.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
-  imports: [FooterDesktopComponent, SocialMediaComponent, FooterMobileComponent, LegalNoticeTextComponent, ArrowComponent, TranslateModule],
+  imports: [FooterDesktopComponent, SocialMediaComponent, FooterMobileComponent, LegalNoticeTextComponent, ArrowComponent, TranslateModule, RouterModule],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })

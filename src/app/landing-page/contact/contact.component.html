@@ -31,34 +31,43 @@
                     <input type="text" name="input-name" id="input-name" [(ngModel)]="formData.name"
                         [class.warning-input]="formErrors.name"
                         (ngModelChange)="validateOnChange('name')"
-                        [placeholder]="formErrors.name ? ('contact.placeholder.error.name' | translate) : ('contact.placeholder.name' | translate)"
+                        [placeholder]="('contact.placeholder.name' | translate)"
                         required>
                     <img *ngIf="shouldShowIcon('name')" [src]="getValidationIcon('name')" class="validation-icon"
                         alt="validation">
+                        <span class="validation-message" *ngIf="formErrors.name">
+                            {{ 'contact.placeholder.error.name' | translate }}
+                        </span>
                 </div>
                 <div class="input-wrapper">
                     <input type="email" name="input-email" id="input-email" [(ngModel)]="formData.email"
                         [class.warning-input]="formErrors.email"
                         (ngModelChange)="validateOnChange('email')"
-                        [placeholder]="formErrors.email ? ('contact.placeholder.error.email' | translate) : ('contact.placeholder.email' | translate)"
+                        [placeholder]="('contact.placeholder.email' | translate)"
                         required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     <img *ngIf="shouldShowIcon('email')" [src]="getValidationIcon('email')" class="validation-icon"
                         alt="validation">
+                        <span class="validation-message" *ngIf="formErrors.email">
+                            {{ 'contact.placeholder.error.email' | translate }}
+                        </span>
                 </div>
                 <div class="input-wrapper">
                     <textarea name="message" id="message" [(ngModel)]="formData.message"
                         [class.warning-input]="formErrors.message"
                         (ngModelChange)="validateOnChange('message')"
-                        [placeholder]="formErrors.message ? ('contact.placeholder.error.message' | translate) : ('contact.placeholder.message' | translate)"
+                        [placeholder]="('contact.placeholder.message' | translate)"
                         required></textarea>
                     <img *ngIf="shouldShowIcon('message')" [src]="getValidationIcon('message')" class="validation-icon"
                         alt="validation">
+                        <span class="validation-message" *ngIf="formErrors.message">
+                            {{ 'contact.placeholder.error.message' | translate }}
+                        </span>
                 </div>
                 <div class="policy-container">
                     <img class="checkbox" [src]="getCheckboxImage()" (click)="toggleCheckbox()"
                         (mouseenter)="checkboxState.isHovered = true" (mouseleave)="checkboxState.isHovered = false"
                         alt="checkbox" required>
-                    <span>{{'contact.policycheck' | translate}} <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive"
+                    <span>{{'contact.policycheck' | translate}} <a [routerLink]="['/policy']" class="link" [class.active-link]="contactIcons.policy.isActive"
                             (mousedown)="contactIcons.policy.isActive = true"
                             (mouseup)="contactIcons.policy.isActive = false">{{'contact.policy' | translate}}</a> {{'contact.policycheck2' | translate}}</span>
                 </div>
@@ -97,10 +106,10 @@
         <app-arrow class="hide-desktop" [href]="'hero'"></app-arrow>
         <app-arrow class="hide-mobile" [href]="'hero-mobile'"></app-arrow>
         <div class="hide-desktop">
-            <a href="legal-notice" class="link" [class.active-link]="contactIcons.legalnotice.isActive"
+            <a [routerLink]="['/legal-notice']" class="link" [class.active-link]="contactIcons.legalnotice.isActive"
                 (mousedown)="contactIcons.legalnotice.isActive = true"
                 (mouseup)="contactIcons.legalnotice.isActive = false">{{ 'footer.legal' | translate }}</a>
-            <a href="policy" class="link" [class.active-link]="contactIcons.policy.isActive"
+            <a [routerLink]="['/policy']" class="link" [class.active-link]="contactIcons.policy.isActive"
                 (mousedown)="contactIcons.policy.isActive = true" (mouseup)="contactIcons.policy.isActive = false">{{
                 'footer.policy' | translate }}</a>
             <p>&copy; Alexander Hörst 2025</p>

@@ -1,20 +1,24 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { ArrowComponent } from "../../shared/arrow/arrow.component";
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ContactService } from "../../shared/services/contact-service.service";
+import { Router } from '@angular/router';
+import { ScrollbarToSectionService } from "../../shared/services/scrollbar-to-section.service";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ArrowComponent, CommonModule, TranslateModule, FormsModule],
+  imports: [ArrowComponent, CommonModule, TranslateModule, FormsModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 
 export class ContactComponent {
+  @Input() href = '';
   readonly MIN_LENGTH = 4;
   readonly EMAIL_PATTERN = "[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}";
   http = inject(HttpClient);
@@ -76,7 +80,7 @@ export class ContactComponent {
     hasError: false
   };
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private scrollbarToSectionService: ScrollbarToSectionService, private router: Router) { }
 
 
   validateForm() {
@@ -219,4 +223,13 @@ export class ContactComponent {
   onPhoneClick() {
     this.contactService.callPhone();
   }
+
+  onNavigate() {
+    if (this.href.startsWith('/')) {
+      this.router.navigate([this.href]);
+    } else {
+      this.router.navigate([this.href]);
+    }
+  }
 }
+

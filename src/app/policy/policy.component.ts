@@ -5,11 +5,12 @@ import { PolicyTextComponent } from "./policy-text/policy-text.component";
 import { ArrowComponent } from '../shared/arrow/arrow.component';
 import { SocialMediaComponent } from '../landing-page/social-media/social-media.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-policy',
   standalone: true,
-  imports: [FooterDesktopComponent, SocialMediaComponent, FooterMobileComponent, PolicyTextComponent, ArrowComponent, TranslateModule],
+  imports: [FooterDesktopComponent, SocialMediaComponent, FooterMobileComponent, PolicyTextComponent, ArrowComponent, TranslateModule, RouterModule],
   templateUrl: './policy.component.html',
   styleUrl: './policy.component.scss'
 })

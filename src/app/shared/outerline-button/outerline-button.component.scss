@@ -1,15 +1,27 @@
 @import './../../../styles.scss';
 
-button {
+div {
     background-color: transparent;
     color: $primaryColor;
     border: 1px solid $primaryColor;
     border-radius: 25px;
-    padding: 10px 25px;
+    padding: 8px 15px;
     cursor: pointer;
+
+    a {
+        color: $primaryColor;
+        text-decoration: none;
+    }
 
     &:hover {
         background-color: #b5e93b50;
         color: $secandColor;
+    }
+}
+
+@media only screen and (min-width: 720px) and (min-height: 570px) {
+    div {
+        border-radius: 25px;
+        padding: 10px 25px;
     }
 }

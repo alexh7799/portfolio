@@ -18,10 +18,10 @@
       </div>
       <app-arrow class="hide-desktop" [href]="'start'"></app-arrow>
       <div class="hide-desktop">
-        <a href="legal-notice" class="link" [class.active-link]="legalnotice.isActive"
+        <a [routerLink]="['/legal-notice']" class="link" [class.active-link]="legalnotice.isActive"
             (mousedown)="legalnotice.isActive = true"
             (mouseup)="legalnotice.isActive = false">{{ 'footer.legal' | translate }}</a>
-        <a href="policy" class="link" [class.active-link]="policy.isActive"
+        <a [routerLink]="['/policy']" class="link" [class.active-link]="policy.isActive"
             (mousedown)="policy.isActive = true" (mouseup)="policy.isActive = false">{{
             'footer.policy' | translate }}</a>
         <p>&copy; Alexander Hörst 2025</p>

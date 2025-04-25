@@ -22,6 +22,7 @@
             border-radius: 20px;
             border: 1px solid $primaryColor;
             padding: 20px;
+            margin-bottom: 10px;
 
             &:focus {
                 outline: none;
@@ -40,6 +41,7 @@
             border: 1px solid $primaryColor;
             padding: 20px;
             resize: none;
+            margin-bottom: 5px;
 
             &:focus {
                 outline: none;
@@ -116,12 +118,34 @@
 
         .input-wrapper {
             position: relative;
-            width: 100%;
+            width: 100% !important;
 
             input,
             textarea {
                 width: 100%;
                 padding-right: 40px;
+
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                    transition: background-color 5000s ease-in-out 0s;
+                    -webkit-text-fill-color: $secandColor !important;
+                    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+                    background-color: transparent !important;
+                }
+            }
+
+            .validation-message {
+                color: #FF4438;
+                font-size: 12px;
+                margin-top: 4px;
+                display: block;
+                position: absolute;
+                bottom: -10px;
+                left: 10px;
+                animation: fadeInOut 125ms ease-in-out;
+                transition: opacity 125ms ease-in-out;
             }
 
             .validation-icon {
@@ -220,19 +244,6 @@ button {
     }
 }
 
-input:-webkit-autofill,
-textarea:-webkit-autofill {
-    transition: background-color 500000s ease-in-out 0s;
-    background-color: #000000 !important;
-    -webkit-text-fill-color: $secandColor !important;
-    box-shadow: 0 0 0px 1000px transparent inset;
-}
-
-input:-internal-autofill-selected {
-    background-color: #000000 !important;
-    -webkit-text-fill-color: $secandColor !important;
-}
-
 .send-info-container {
     position: fixed;
     bottom: 32px;
@@ -265,6 +276,17 @@ input:-internal-autofill-selected {
     }
 }
 
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes slideIn {
     from {
         transform: translateX(100%);
@@ -293,7 +315,6 @@ input:-internal-autofill-selected {
 
 @media only screen and (min-width: 720px) and (min-height: 570px) {
     .container {
-        display: flex;
         flex-direction: row !important;
         align-items: start;
         justify-content: space-between;
@@ -427,6 +448,16 @@ input:-internal-autofill-selected {
                 margin: 0;
                 color: $secandColor;
             }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) and (min-height: 810px) {
+    .contact-input-container {
+        width: 700px !important;
+
+        textarea {
+            height: 400px !important;
         }
     }
 }

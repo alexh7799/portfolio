@@ -1,10 +1,12 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { ScrollbarToSectionService } from '../services/scrollbar-to-section.service';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './buttons.component.html',
   styleUrl: './buttons.component.scss'
 })
@@ -13,11 +15,13 @@ export class ButtonsComponent {
   @Input() href = '';
   @Input() isExternalLink = false;
 
-  constructor(private scrollbarToSectionService: ScrollbarToSectionService) { }
+  constructor(private scrollbarToSectionService: ScrollbarToSectionService, private router: Router) { }
     
   onNavigate() {
     if (this.isExternalLink) {
-      window.location.href = this.href;
+      window.open(this.href, '_blank');
+    } else if (this.href.startsWith('/')) {
+      this.router.navigate([this.href]);
     } else {
       this.scrollbarToSectionService.scrollToSection(this.href);
     }
