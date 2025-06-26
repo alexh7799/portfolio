@@ -27,6 +27,15 @@
     }
 }
 
+@media only screen and (min-width: 720px) {
+    article {
+        width: calc((100vw - 130px) * 11.5) !important;
+        column-count: 11 !important;
+        column-gap: 80px;
+        height: 100%;
+    }
+}
+
 @media only screen and (min-width: 720px) and (min-height: 810px) {
     .container {
         padding: 40px;
