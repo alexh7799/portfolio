@@ -10,6 +10,7 @@
         h2,
         h3 {
             color: $primaryColor !important;
+            margin-top: 0;
         }
 
         a {
@@ -29,9 +30,9 @@
 
 @media only screen and (min-width: 720px) {
     article {
-        width: calc((100vw - 130px) * 11.5) !important;
+        width: calc((100vw - 130px) * 11) !important;
         column-count: 11 !important;
-        column-gap: 80px;
+        column-gap: 20px;
         height: 100%;
     }
 }
@@ -96,6 +97,41 @@
                     color: $primaryColor !important;
                     text-decoration: underline;
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    article {
+        width: calc((100vw - 180px) * 5.8) !important;
+        column-count: 11 !important;
+        column-gap: 40px;
+        height: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 1670px) {
+    article {
+        width: calc((100vw - 200px) * 5.7) !important;
+        column-count: 11 !important;
+        column-gap: 40px;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    ::ng-deep {
+        section {
+            h1,
+            h2,
+            h3,
+            p,
+            ul,
+            span {
+                width: calc(100% - 40px) !important;
+                max-width: 600px !important;
             }
         }
     }

@@ -10,6 +10,7 @@
         h2,
         h3 {
             color: $primaryColor !important;
+            margin-top: 0;
         }
 
         a {
@@ -29,15 +30,13 @@
 
 @media only screen and (min-width: 720px) {
     article {
-        width: calc((100vw - 130px) * 2) !important;
+        width: calc((100vw - 150px) * 2) !important;
         column-count: 2 !important;
         column-gap: 60px;
     }
 }
 
 @media only screen and (min-width: 720px) and (min-height: 810px) {
-
-    
 
     .container {
         padding: 40px;
@@ -100,5 +99,13 @@
                 }
             }
         }
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    article {
+        width: calc((100vw - 150px) ) !important;
+        column-count: 2 !important;
+        column-gap: 60px;
     }
 }
